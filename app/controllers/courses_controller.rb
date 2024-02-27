@@ -1,5 +1,4 @@
 class CoursesController < ApplicationController
-  before_action :set_user, only: %i[new create]
   before_action :set_course, only: [:show, :edit, :destroy]
 
   def index
@@ -12,7 +11,7 @@ class CoursesController < ApplicationController
 
   def create
     @course = Course.new(course_params)
-    @course.user = @user
+    @course.user = current_user
 
     if @course.save
       redirect_to course_path(@course)
@@ -51,10 +50,6 @@ class CoursesController < ApplicationController
                                    :tag,
                                    :text_editor,
                                    :user_id)
-  end
-
-  def set_user
-    @user = User.find(params[:user_id])
   end
 
   def set_course
