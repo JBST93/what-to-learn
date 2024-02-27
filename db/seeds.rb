@@ -7,5 +7,3 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
-Course.create!(title: "LLMs", description: "Course description", start_date: Date.parse("16th March 2024"), end_date: Date.parse("16th April 2024"), price: 399.99, user_id: 1, tag: "AI")
