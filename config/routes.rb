@@ -9,4 +9,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  resources :courses do
+    resources :enrollments, only: [:index, :new, :create, :show]
+  end
+  resources :enrollments, only: [:destroy]
 end
