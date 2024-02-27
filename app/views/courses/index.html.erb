@@ -8,10 +8,9 @@
   </div>
 </div>
 <div class="page-container">
-  <div class="row gap-3">
+  <div class="row gap-3 justify-content-between">
     <% @courses.each do |course| %>
       <%= render "shared/card", course: course %>
     <% end %>
   </div>
 </div>
-
