@@ -1,3 +1,13 @@
 class UsersController < ApplicationController
-validates :first_name, presence: :true
+
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+
 end
