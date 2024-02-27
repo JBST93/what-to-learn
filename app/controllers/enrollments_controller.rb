@@ -1,19 +1,20 @@
 class EnrollmentsController < ApplicationController
-  # before_action :set_course, only: [:new, :create]
+  before_action :set_course, only: [:new, :create]
 
   def new
-    @course = Course.find(params[:course_id])
     @enrollment = Enrollment.new
     @enrollment.course = @course
     @enrollment.user = current_user
   end
 
   def create
-    @course = Course.find(params[:course_id])
     @enrollment = Enrollment.new(enrollment_params)
+    @enrollment.course = @course
     @enrollment.user = current_user
     if @enrollment.save
-      flash.alert = "Enrolled"
+      redirect_to course_path(@course)
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
