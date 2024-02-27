@@ -1,0 +1,14 @@
+<div class="page-container">
+  <div class="row gap-5">
+    <div class="col-8">
+      <h1 class="show-title mb-4"><%= @course.title %></h1>
+      <p class="show-description"><%= @course.description %></p>
+    </div>
+    <div class="col-3 enroll-card d-flex flex-column">
+      <h5>Level up your career</h5>
+      <p class="mb-2"><span>Dates: </span><%= @course.start_date.strftime('%d %b') %> - <%= @course.end_date.strftime("%d %b '%y") %></p>
+      <p class="mb-4">Price: $<%= @course.price %></p>
+      <button class="btn btn-primary">Secure my spot!</button>
+    </div>
+  </div>
+</div>
