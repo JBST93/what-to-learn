@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>New enrolment for <%= @course.title %></h1>
+
+  <%= simple_form_for(@enrollment) do |f| %>
+    <%= f.error_notification %>
+
+    <%= f.button :submit, "Enroll", class: "btn btn-primary" %>
+  <% end %>
+</div>

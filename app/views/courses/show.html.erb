@@ -8,7 +8,7 @@
       <h5>Level up your career</h5>
       <p class="mb-2"><span>Dates: </span><%= @course.start_date.strftime('%d %b') %> - <%= @course.end_date.strftime("%d %b '%y") %></p>
       <p class="mb-4">Price: $<%= @course.price %></p>
-      <button class="btn btn-primary">Secure my spot!</button>
+      <%= link_to "Secure my spot!", new_course_enrollment_path(@course), class: "btn btn-primary w-100" %>
     </div>
   </div>
 </div>
