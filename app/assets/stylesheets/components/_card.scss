@@ -1,0 +1,22 @@
+.page-container {
+  width: 1256px;
+  margin: 0 auto;
+}
+
+.course-card {
+  background-color: lightgray;
+  height: 296px;
+  width: 376px;
+  border-radius: 12px;
+  margin: 32px 0;
+  padding: 24px 32px 32px 32px;
+}
+
+.course-card .course-tag {
+  background-color: grey;
+  width: fit-content;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 400;
+}
