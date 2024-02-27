@@ -17,6 +17,41 @@
   width: fit-content;
   padding: 4px 8px;
   border-radius: 8px;
-  font-size: 12px;
+  margin-right: 16px;
+}
+
+.course-card .course-header {
+  font-size: 16px;
   font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.course-card .course-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  height: 56px;
+}
+
+.course-card .course-description {
+  font-size: 16px;
+  margin-bottom: 20px;
+  height: 56px;
+  line-height: 20px;
+}
+
+.course-card .course-creator {
+  height: 48px;
+}
+
+.course-card .creator-name {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.course-card img {
+  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+  border: 1px solid grey;
 }
