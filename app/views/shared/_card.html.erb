@@ -1,8 +1,8 @@
 <div class="course-card col-3">
-  <%= link_to course_path(course), class: "text-decoration-none" do %>
+  <%= link_to course_path(course), class: "text-decoration-none link-dark" do %>
     <div class="d-flex flex-row align-items-center course-header">
       <div class="course-tag"><%= course.tag %></div>
-      <p class="m-0">Starts on <%= course.start_date %></p>
+      <p class="m-0">Starts on <%= course.start_date.strftime("%d %b") %></p>
     </div>
     <h3 class="course-title"><%= course.title %></h3>
     <p class="course-description"><%= course.description %></p>
