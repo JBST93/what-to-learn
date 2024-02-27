@@ -8,11 +8,9 @@
   </div>
 </div>
 <div class="page-container">
-  <div class="row">
+  <div class="row gap-3">
     <% @courses.each do |course| %>
-      <div class="col">
-        <%= render "shared/card", course: course %>
-      </div>
+      <%= render "shared/card", course: course %>
     <% end %>
   </div>
 </div>
