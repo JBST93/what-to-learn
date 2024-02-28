@@ -2,11 +2,12 @@ class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :destroy]
   skip_before_action :authenticate_user!, only: :index
 
-
-
-
   def index
     @courses = Course.all
+  end
+
+  def show
+    @marker = {lat: @course.latitude, lng: @course.longitude}
   end
 
   def new
@@ -22,9 +23,6 @@ class CoursesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def show
   end
 
   def edit

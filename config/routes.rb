@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  get "/users/:id/my_courses", to: "users#my_courses", as: "user_courses"
+  get "/users/my_enrollments", to: "users#my_enrollments", as: "user_enrollments"
 
   resources :courses do
     resources :enrollments, only: [:new, :create]

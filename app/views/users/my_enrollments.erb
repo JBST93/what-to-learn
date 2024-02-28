@@ -1,0 +1,10 @@
+<h1>Hi <%= current_user.first_name%>, here are your enrollments</h1>
+<% if @my_enrollments %>
+  <% @my_enrollments.each do |my_enrollment| %>
+    <div class="container">
+      <%= render partial: 'shared/card', locals: { course: my_enrollment.course } %>
+    </div>
+  <% end %>
+<% else %>
+  <%= "Go study" %>
+<% end %>
