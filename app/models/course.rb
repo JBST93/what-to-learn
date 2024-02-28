@@ -3,5 +3,5 @@ class Course < ApplicationRecord
   has_many :enrollments, dependent: :destroy
   has_one_attached :image
 
-  validates :title, :start_date, :end_date, :price, presence: true
+  validates :title, :start_date, :end_date, :coordinates, :price, presence: true
 end
