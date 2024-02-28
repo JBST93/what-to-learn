@@ -1,8 +1,34 @@
 <div class="container mt-3">
-  <h1>New enrollment for <%= @course.title %></h1>
+  <div class="row justify-content-center"> <!-- Center the form horizontally -->
+    <div class="col-md-8"> <!-- Specify the width of the form -->
+      <h1 class="text-center">Enroll in <%= @course.title %></h1>
 
-  <%= simple_form_for @enrollment, url: course_enrollments_path(@course) do |f| %>
-    <%= f.error_notification %>
-    <%= f.button :submit, "Enroll", class: "btn btn-primary" %>
-  <% end %>
+      <%= simple_form_for @enrollment, url: course_enrollments_path(@course), html: { class: 'form-horizontal' } do |f| %>
+        <%= f.error_notification %>
+
+        <%= f.simple_fields_for @credit_card do |cc| %>
+          <%= cc.input :card_number, label: "Credit Card Number", placeholder: "1234 5678 9012 3456", input_html: { class: 'form-control' } %>
+
+          <div class="row">
+            <div class="col-md-6">
+              <%= cc.input :expiry_month, label: "Expiry Month", collection: 1..12, include_blank: "Month", placeholder: "MM", input_html: { class: 'form-control' } %>
+            </div>
+            <div class="col-md-6">
+              <%= cc.input :expiry_year, label: "Expiry Year", collection: Date.today.year..(Date.today.year + 10), include_blank: "Year", placeholder: "YYYY", input_html: { class: 'form-control' } %>
+            </div>
+          </div>
+
+          <%= cc.input :cvv, label: "CVV", placeholder: "123", input_html: { class: 'form-control' } %>
+
+
+        <% end %>
+
+        <div class="form-group">
+          <div class="text-center"> <!-- Center the button horizontally -->
+            <%= f.button :submit, "Pay Now", class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

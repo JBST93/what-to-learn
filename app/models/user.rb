@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_one_attached :avatar
+  has_one :creditcard
   has_many :enrollments, dependent: :destroy
   has_many :courses, through: :enrollments
 

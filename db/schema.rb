@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_28_125557) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_28_134838) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -60,6 +60,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_28_125557) do
     t.index ["course_creator_id"], name: "index_courses_on_course_creator_id"
   end
 
+  create_table "creditcards", force: :cascade do |t|
+    t.bigint "card_number"
+    t.integer "expiry_month"
+    t.integer "expiry_year"
+    t.integer "cvv"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_creditcards_on_user_id"
+  end
+
   create_table "enrollments", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "course_id", null: false
@@ -87,6 +98,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_28_125557) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "courses", "users", column: "course_creator_id"
+  add_foreign_key "creditcards", "users"
   add_foreign_key "enrollments", "courses"
   add_foreign_key "enrollments", "users"
 end
