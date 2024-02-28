@@ -3,6 +3,37 @@
   background: white;
 }
 
+.navbar-title {
+  font-size: 22px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-decoration: none;
+  color: black;
+  margin-right: 16px;
+}
+
+.navbar-link {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  color: black;
+  margin-left: 32px;
+
+  &:hover {
+  color: rgb(104, 104, 104);
+  }
+}
+
+.navbar-width {
+  width: 1256px;
+  padding-left: 0;
+  padding-right: 0;
+  height: 48px;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
