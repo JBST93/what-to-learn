@@ -3,14 +3,22 @@ class EnrollmentsController < ApplicationController
 
   def new
     @enrollment = Enrollment.new
+    @credit_card = Creditcard.new
     @enrollment.course = @course
     @enrollment.user = current_user
+
   end
 
   def create
     @enrollment = Enrollment.new(enrollment_params)
+    @credit_card = Creditcard.new(creditcard_params)
+
     @enrollment.course = @course
     @enrollment.user = current_user
+    @credit_card.user_id = current_user.id
+
+    @credit_card.save
+
     if @enrollment.save
       redirect_to course_path(@course)
     else
@@ -26,5 +34,9 @@ class EnrollmentsController < ApplicationController
 
   def enrollment_params
     params.require(:enrollment).permit(:course_id)
+  end
+
+  def creditcard_params
+    params.require(:enrollment).require(:creditcard).permit(:card_number, :expiry_month, :expiry_year, :cvv)
   end
 end
