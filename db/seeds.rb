@@ -54,13 +54,12 @@ end
     text_editor: Faker::Lorem.paragraph(sentence_count: 2)
   )
   puts "Course #{course.title} has been added to the DB"
-
 end
 
 15.times do
   booking = Enrollment.create!(
     user: User.all.sample,
-    course: Course.all.sample,
+    course: Course.all.sample
   )
 
   puts "#{booking.user.first_name} has enrolled in #{booking.course.title}"
