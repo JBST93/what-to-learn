@@ -10,7 +10,7 @@
       <% if course.user.avatar.attached? %>
         <%= cl_image_tag course.user.avatar.key %>
       <% end %>
-      <p class="creator-name m-0 ms-3"><%= course.user.first_name %> <%= course.user.last_name %></p>
+      <p class="creator-name m-0 ms-3">Course by: <%= course.user.first_name %> <%= course.user.last_name %></p>
     </div>
   <% end %>
 </div>
