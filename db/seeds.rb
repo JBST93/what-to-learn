@@ -12,201 +12,40 @@ require 'faker'
 
 puts "Seeding the DB.. "
 
-<<<<<<< HEAD
-# Enrollment.destroy_all
-=======
-addresses = ["9 Smalldale Road, Birmingham, B42 2RX",
-  "82 Grammar School Road, Brigg, DN20 8AY",
-  "1A Queens Road, Annitsford, NE23 7RA",
-  "4 Morley Road, Romford, RM6 6XB",
-  "Kimberley, Horton Road, Staines, TW19 6BQ",
-  "17 Charles Street, Leabrooks, DE55 1LZ",
-  "Bryn Gwynt, Beddgelert, LL55 4UU",
-  "41 Douglas Road, Tonbridge, TN9 2TH",
-  "2 Victoria Place, Wanswell, GL13 9SB",
-  "16 Windy Street, Chipping, PR3 2GD",
-  "55 Moorland Avenue, Lincoln, LN6 7RE",
-  "40 Hazelwood Road, Oxted, RH8 0HZ",
-  "2 Willow Close, Watlington, PE33 0JR",
-  "26 Bell Hill, Finedon, NN9 5ND",
-  "242 Little Brays, Harlow, CM18 6ER",
-  "8 Ilchester Road, Chilthorne Domer, BA22 8RF",
-  "119 New Road, Chatteris, PE16 6BU",
-  "Gwynfa, Cae Garw, Llanfair, LL46 2RL",
-  "4 West Court, Braybrooke Road, Market Harborough, LE16 8GB",
-  "6 Swanholme Close, Lincoln, LN6 3DE",
-  "77 Windsor Court, London, N14 5HT",
-  "47 Pendeford Mill Lane, Codsall, WV8 1JG",
-  "4 The Mews, Pulborough, RH20 2BB",
-  "71 Norbury Road, Feltham, TW13 4SR",
-  "Flat 28, St. Peters House, Queens Row, London, SE17 2PT",
-  "1 Cawley Lane, Heckmondwike, WF16 0BJ",
-  "26 Rowe Avenue, Peacehaven, BN10 7PF",
-  "8 Beaufort Close, Plymouth, PL5 1AR",
-  "6 Kingsmoor Road, Harlow, CM19 4HR",
-  "24 Hood Close, Sleaford, NG34 7WJ",
-  "8 Fitzroy Court, Bartlett Crescent, High Wycombe, HP12 3DW",
-  "Rose Villa, Cherry Chase, Tiptree, CO5 0AE",
-  "Flat A-C, 122 Whitechapel Road, London, E1 1JE",
-  "2 May Pasture, Great Shelford, CB22 5FA",
-  "Woodville Surgery, Burton Road, Woodville, DE11 7JG",
-  "Flat 1, Highcroft, 30 Old Lodge Lane, Purley, CR8 4DF",
-  "81 Wakefield Road, Streethouse, WF7 6BT",
-  "N E C House, Bickenhill Lane, Birmingham, B40 1PQ",
-  "Vaddicott Corner, Shebbear, EX21 5QT",
-  "33 Moorland Avenue, Milnrow, OL16 3DZ",
-  "Trevithal An Mor, Paul, TR19 6UQ",
-  "38 Weigall Road, London, SE12 8HE",
-  "1 Newbridge Cottages, Newbridge, PL18 9LH",
-  "122 Light Oaks Road, Salford, M6 8WL",
-  "3 Harley Way, Bridgnorth, WV16 5PA",
-  "50 Albion Crescent, Lincoln, LN1 1EB",
-  "79D Forest Road, Colchester, CO4 3XH",
-  "21 Ffordd Y Ffynnon, Bangor, LL57 1HB",
-  "3 Hollygate Close, Melton Mowbray, LE13 1HD",
-  "13 Flan Close, Ulverston, LA12 7DW",
-  "34A Salisbury Street, Amesbury, SP4 7HD",
-  "2 Palmers Lodge Cottages, Garlinge Green Road, Petham, CT4 5RL",
-  "Kerseycleugh, Kielder, NE48 1EN",
-  "The Granary, The Causeway, Mark, TA9 4QJ",
-  "80 Leamington Drive, Sutton-In-Ashfield, NG17 5BJ",
-  "6 Civic Court, Hebburn, NE31 2YB",
-  "43 Strand Meadow, Burwash, TN19 7BP",
-  "31 Pepper Hill, Northfleet, DA11 8EW",
-  "86 Church Close, Stanton By Bridge, DE73 7GH",
-  "13 Martin Close, Bedford, MK41 7JY",
-  "Mandalay, Waberthwaite, LA19 5YL",
-  "First Floor North, 10 Furnival Street, London, EC4A 1AB",
-  "10 Kammond Avenue, Seaford, BN25 3JL",
-  "Station House, Breedon Road, Worthington, LE65 1RA",
-  "Lanscove, The Coombes, Polperro, PL13 2RG",
-  "Unit 6 Mendip Vale Trading Estate, Cheddar, BS27 3EL",
-  "8C Bowes Road, Middlesbrough, TS2 1LU",
-  "3 Thicket Walk, Thornbury, BS35 2JN",
-  "21 Beech Road, East Malling, ME19 6DH",
-  "Bod Thelwal, 2 Bay View Road, Benllech, LL74 8TT",
-  "12 Stainer Close, Witham, CM8 1RU",
-  "69 Princess Way, Stourport-On-Severn, DY13 0EL",
-  "42 Patterdale Road, Blyth, NE24 5JX",
-  "30 Ollerton Road, Retford, DN22 7TQ",
-  "Ceidio Isaf, Llanerchymedd, LL71 7BH",
-  "66 Buckland Avenue, Dover, CT16 2NW",
-  "Thorne Barton Farmhouse, Chesham Road, Ashley Green, HP5 3PQ",
-  "66 Crown Road, Twickenham, TW1 3ER",
-  "4 Rossetti Court, Lyell Road, Birchington, CT7 9JE",
-  "Michelham Gate, Michelham Priory Road, Upper Dicker, BN27 3QR",
-  "1 The Old School House, Brickwall Lane, Liverpool, L29 9AD",
-  "39 Thorne Street, London, SW13 0PT",
-  "168 Timken Way North, Duston, NN5 6WF",
-  "44 Blackberry Walk, Lychpit, RG24 8SN",
-  "8 Priory Road, Chilton Polden, TA7 9EH",
-  "Westwynds, Old Mains Lane, Poulton-Le-Fylde, FY6 7LA",
-  "28 Square Road, Todmorden, OL14 7SU",
-  "584 Malling Road, Kings Hill, ME19 4PU",
-  "2 Jordan Orchard, Buckfastleigh, TQ11 0NG",
-  "Old Forge, Stiffords Bridge, Cradley, WR13 5NN",
-  "9 Ball Walk, Hyde, SK14 3PY",
-  "1 Milburn Court, Brampton, CA8 1NE",
-  "7 St Michaels Close, Erith, DA18 4DY",
-  "9 Garden Court, Hanworth Road, Hampton, TW12 3EH",
-  "8 George Street, Brunswick Village, NE13 7ED",
-  "4 School Road, Hurst, RG10 0DR",
-  "117 Yonder Street, Ottery St Mary, EX11 1HH",
-  "17 Dunveth Business Park, Wadebridge, PL27 7FE",
-  "5 Suddards Fold, Bradford, BD7 3LQ",
-  "146 Park Road, Westhoughton, BL5 3DD",
-  "8 Wyedale Close, Buxton, SK17 9RF",
-  "Flat 21, Maltings Court, Hoe Lane, Ware, SG12 9LS",
-  "18 Ripley Drive, Harrogate, HG1 3JD",
-  "41 Hays Mews, London, W1J 5QA",
-  "52 St Albans Drive, Stevenage, SG1 4RU",
-  "Fields Cottage, Field Lane, Bishops Castle, SY9 5AG",
-  "3 Whinmoor Walk, Manchester, M40 5NX",
-  "The Qube, Windward Way, Middlesbrough, TS2 1QG",
-  "65 Ashburnham Road, Southend-On-Sea, SS1 1QE",
-  "56A London Road, Tonbridge, TN10 3DE",
-  "49 Glentworth Gardens, Wolverhampton, WV6 0SH",
-  "16 Tarrants Hill, Hungerford, RG17 0BL",
-  "20 Lagoon Road, Bognor Regis, PO21 4TJ",
-  "24 Waterloo Street, Cheltenham, GL51 9BT",
-  "Church Farm House, Winsley, BA15 2JH",
-  "21 Stanmore Gardens, Richmond, TW9 2HN",
-  "69 Teddington Grove, Perry Barr, B42 1RG",
-  "36 Rydal Avenue, Fleetwood, FY7 7JU",
-  "Devon House, Water Street, Menai Bridge, LL59 5DD",
-  "26 Algarth Road, Pocklington, YO42 2HP",
-  "12 Bramble Gardens, Worcester, WR5 1SQ",
-  "132 Bolton Road, Turton, BL7 0AE",
-  "25 Wellfarm Close, Walton, L9 6GD",
-  "14 Swancote Green, Bracknell, RG12 7BJ",
-  "30 Commercial Street, Middlesbrough, TS2 1JW",
-  "Oakdene, Dunmow Road, Rayne, CM77 6SF",
-  "7A High Street, Eccleshall, ST21 6BW"]
-
-Enrollment.destroy_all
 Course.destroy_all
->>>>>>> 96da0721aab172022ec2fceff466e981a7eb404b
 User.destroy_all
-Course.destroy_all
 
 puts "I cleaned the DB"
 
 # Students
-User.create!([
-  { first_name: "Alan", last_name: "Rodriguez", email: "alice@school.com", role: "student", encrypted_password: "password" },
-  { first_name: "Marco", last_name: "Ricci", email: "alice@school.com", role: "student", encrypted_password: "password" },
-  { first_name: "Ben", last_name: "Claren", email: "alice@school.com", role: "student", encrypted_password: "password" },
-  { first_name: "Dez", last_name: "Hastrup", email: "alice@school.com", role: "student", encrypted_password: "password" },
-  { first_name: "Ebitari", last_name: "Alaibe", email: "alice@school.com", role: "student", encrypted_password: "password" },
-  { first_name: "Hamed", last_name: "Aljamry", email: "alice@school.com", role: "student", encrypted_password: "password" },
-  { first_name: "Jake", last_name: "Pople", email: "alice@school.com", role: "student", encrypted_password: "password" },
-  { first_name: "Jasper", last_name: "Warmenhoven", email: "alice@school.com", role: "student", encrypted_password: "password" },
-  { first_name: "Louis", last_name: "Mellac", email: "alice@school.com", role: "student", encrypted_password: "password" },
-  { first_name: "Louis", last_name: "Leslie", email: "alice@school.com", role: "student", encrypted_password: "password" },
-  { first_name: "Louise", last_name: "Stone", email: "alice@school.com", role: "student", encrypted_password: "password" },
-  { first_name: "Lucien", last_name: "George", email: "alice@school.com", role: "student", encrypted_password: "password" }
+users = User.create!([
+  { first_name: "Alan", last_name: "Rodriguez", email: "alan@school.com", role: "student", password: "password" },
+  { first_name: "Marco", last_name: "Ricci", email: "marco@school.com", role: "student", password: "password" },
+  { first_name: "Ben", last_name: "Claren", email: "ben@school.com", role: "student", password: "password" },
+  { first_name: "Dez", last_name: "Hastrup", email: "dez@school.com", role: "student", password: "password" },
+  { first_name: "Ebitari", last_name: "Alaibe", email: "ebitari@school.com", role: "student", password: "password" },
+  { first_name: "Hamed", last_name: "Aljamry", email: "hamed@school.com", role: "student", password: "password" },
+  { first_name: "Jake", last_name: "Pople", email: "jake@school.com", role: "student", password: "password" },
+  { first_name: "Jasper", last_name: "Warmenhoven", email: "jasper@school.com", role: "student", password: "password" },
+  { first_name: "Louis", last_name: "Mellac", email: "louis@school.com", role: "student", password: "password" },
+  { first_name: "Louis", last_name: "Leslie", email: "louisl@school.com", role: "student", password: "password" },
+  { first_name: "Louise", last_name: "Stone", email: "louise@school.com", role: "student", password: "password" },
+  { first_name: "Lucien", last_name: "George", email: "lucien@school.com", role: "student", password: "password" }
 ])
 
-# courses = Course.create! [
-#   [
-#     title: "Introduction to Programming",
-#     description: "Learn the basics of programming.",
-#     start_date: Date.today,
-#     end_date: Date.today + 3.months,
-#     price: 100.00,
-#     user_id: teacher.id, # Associate course with the teacher
-#     active: true,
-#     tag: "Programming",
-#     text_editor: "<p>This is a course for beginners.</p>",
-#     address: "138 Kingsland Road, London, E2 8DY"
-#   ],
+Course.create!([
+  {  title: "Learn the basics of Python", description: "Learn the basics of Python in this 3 month crash course.", start_date: Date.today, end_date: Date.today + 3.months,  price: rand(100..2050)-1, course_creator_id: users.sample.id, active: true, tag: "Python", text_editor: "<p>Python is a versatile and widely-used programming language known for its readability and straightforward syntax, making it an excellent choice for beginners and seasoned developers alike. It serves as a foundation for a variety of applications, from web development to data analysis, machine learning, and beyond. With its powerful standard libraries and extensive support from an active community, Python enables developers to implement complex functionalities with minimal code, enhancing productivity and innovation. Whether you're looking to dive into software development, automate tasks, or explore the realms of artificial intelligence, learning the basics of Python provides a solid stepping stone to mastering the skills needed to tackle modern computing challenges</p>", address: "138 Kingsland Road, London, E2 8DY" },
 
+  {  title: "Learn the basics of Ruby", description: "Learn Ruby in this 3 month crash course.", start_date: Date.today, end_date: Date.today + 3.months,  price: rand(100..2050)-1, course_creator_id: users.sample.id, active: true, tag: "Ruby", text_editor: "<p>Ruby is an elegant and powerful programming language renowned for its simplicity and productivity. It's the foundation of the Ruby on Rails web framework, which revolutionized web development with its convention over configuration approach. Ruby's clear syntax and dynamic typing make it an ideal language for beginners, yet it's robust enough for complex software engineering tasks. With a strong focus on developer happiness and a vibrant community, Ruby offers extensive libraries and tools, facilitating rapid development of web applications, automation scripts, data processing, and more. Learning Ruby not only opens the door to modern web development but also instills programming practices that prioritize readability, maintainability, and efficient code writing, making it a cherished tool among developers worldwide.</p>", address: "1 St Giles High St
+  , London, WC2H 8AG" },
 
-<<<<<<< HEAD
-# end
-=======
-4.times do
-  course = Course.create!(
-    title: Faker::Educator.course_name,
-    description: Faker::Lorem.paragraph(sentence_count: 4),
-    start_date: Faker::Date.between(from: Date.today, to: 1.month.from_now),
-    end_date: Faker::Date.between(from: 1.month.from_now, to: 3.months.from_now),
-    price: Faker::Number.decimal(l_digits: 2),
-    course_creator_id: User.pluck(:id).sample,
-    active: true,
-    tag: Faker::Lorem.word,
-    text_editor: Faker::Lorem.paragraph(sentence_count: 2),
-    address: addresses.sample
-  )
-  puts "Course #{course.title} has been added to the DB"
-end
+  {  title: "Learn mid-level Javascript", description: "Learn Javascript in this 3 month intensive course.", start_date: Date.today, end_date: Date.today + 3.months,  price: rand(100..2050)-1, course_creator_id: users.sample.id, active: true, tag: "Javascript", text_editor: "<p>JavaScript stands as the backbone of modern web development, powering dynamic and interactive elements across websites and applications. Initially designed to breathe life into static web pages, it has evolved into a versatile and essential language for both frontend and backend development, thanks to Node.js. With its event-driven nature and support for asynchronous programming, JavaScript enables the creation of smooth, user-friendly experiences in web browsers, mobile apps, and even desktop applications. Its ubiquity across development environments and the vast ecosystem of libraries and frameworks—such as React, Angular, and Vue.js—make mastering JavaScript a crucial step for any aspiring developer. By learning the basics of JavaScript, you unlock the potential to build engaging, responsive, and high-performing applications, marking a critical milestone in the journey of modern web and software development.</p>", address: "807 Wandsworth Rd, London, SW8 3JH" },
 
-15.times do
-  booking = Enrollment.create!(
-    user: User.all.sample,
-    course: Course.all.sample
-  )
+  {  title: "Learn mid-level Ruby on Rails", description: "Learn Ruby on Rails in this 3 month intensive course.", start_date: Date.today, end_date: Date.today + 3.months,  price: rand(100..2050)-1, course_creator_id: users.sample.id, active: true, tag: "Ruby on Rails", text_editor: "<p>JavaScript stands as the backbone of modern web development, powering dynamic and interactive elements across websites and applications. Initially designed to breathe life into static web pages, it has evolved into a versatile and essential language for both frontend and backend development, thanks to Node.js. With its event-driven nature and support for asynchronous programming, JavaScript enables the creation of smooth, user-friendly experiences in web browsers, mobile apps, and even desktop applications. Its ubiquity across development environments and the vast ecosystem of libraries and frameworks—such as React, Angular, and Vue.js—make mastering JavaScript a crucial step for any aspiring developer. By learning the basics of JavaScript, you unlock the potential to build engaging, responsive, and high-performing applications, marking a critical milestone in the journey of modern web and software development.</p>", address: "178 Epson Road, London, E1 3EY" },
 
-  puts "#{booking.user.first_name} has enrolled in #{booking.course.title}"
-end
->>>>>>> 96da0721aab172022ec2fceff466e981a7eb404b
+  {  title: "Learn mid-level Ruby on Rails", description: "Learn Ruby on Rails in this 3 month intensive course.", start_date: Date.today, end_date: Date.today + 3.months,  price: rand(100..2050)-1, course_creator_id: users.sample.id, active: true, tag: "Ruby on Rails", text_editor: "<p>Ruby on Rails, often simply Rails, is a powerful web application framework that follows the model-view-controller (MVC) architecture, enabling developers to build sophisticated web applications with ease and efficiency. Built on top of the Ruby programming language, Rails emphasizes convention over configuration (CoC) and the DRY (Don't Repeat Yourself) principle, which together streamline the development process by reducing the amount of boilerplate code developers need to write. Its comprehensive ecosystem includes built-in support for database integration, web services, and web pages, making it an ideal choice for rapid application development.</p>", address: "3 Kings Road, London, E6 2DP" },
+
+  {  title: "Learn advanced Python", description: "Learn Python in this 1 month course.", start_date: Date.today, end_date: Date.today + 3.months,  price: rand(100..2050)-1, course_creator_id: users.sample.id, active: true, tag: "Python", text_editor: "<p>Python is a versatile and widely-used programming language known for its readability and straightforward syntax, making it an excellent choice for beginners and seasoned developers alike. It serves as a foundation for a variety of applications, from web development to data analysis, machine learning, and beyond. With its powerful standard libraries and extensive support from an active community, Python enables developers to implement complex functionalities with minimal code, enhancing productivity and innovation.</p>", address: "45 Channing Street, London, E1 3FR" },
+
+  {  title: "Learn advanced HTML, CSS & Bootstrap", description: "Learn HTML, CSS & Bootstrap in this 2 month course.", start_date: Date.today, end_date: Date.today + 3.months,  price: rand(100..2050)-1, course_creator_id: users.sample.id, active: true, tag: "HTML, CSS & Bootstrap", text_editor: "<p>HTML, CSS, and Bootstrap form a powerful trio in the world of web development, enabling developers and designers to create visually appealing and responsive websites with ease. HTML lays the foundation, structuring web content through elements and tags, while CSS adds style, presenting the HTML in visually dynamic ways with colors, fonts, and layouts. Bootstrap, a popular CSS framework, accelerates the design process by providing a comprehensive set of pre-designed components and grid systems. This allows for rapid, consistent styling across different browsers and devices, making web development more efficient. By mastering HTML, CSS, and Bootstrap, developers can quickly turn ideas into reality, crafting responsive, mobile-first websites that stand out in today’s digital landscape.</p>", address: "49 Ewing Road Street, London, E6 3HH" }
+  ])
