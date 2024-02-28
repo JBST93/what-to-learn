@@ -18,6 +18,7 @@ class EnrollmentsController < ApplicationController
     @credit_card.user_id = current_user.id
 
     @credit_card.save
+    @enrollment.paid = true
 
     if @enrollment.save
       redirect_to course_path(@course)
