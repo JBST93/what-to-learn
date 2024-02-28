@@ -15,6 +15,7 @@ class EnrollmentsController < ApplicationController
 
     @enrollment.course = @course
     @enrollment.user = current_user
+    @enrollment.paid = false
     @credit_card.user_id = current_user.id
 
     @credit_card.save

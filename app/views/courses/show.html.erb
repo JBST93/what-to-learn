@@ -4,16 +4,11 @@
       <h1 class="show-title mb-4"><%= @course.title %></h1>
       <p class="show-description"><%= @course.description %></p>
     </div>
+
     <div class="col-3 enroll-card d-flex flex-column">
-      <h5>Level up your career</h5>
-      <p class="mb-2"><span>Dates: </span><%= @course.start_date.strftime('%d %b') %> - <%= @course.end_date.strftime("%d %b '%y") %></p>
-      <p class="mb-4">Price: $<%= @course.price %></p>
-      <% if @paid%>
-       <%= link_to "Already Paid!", new_course_enrollment_path(@course), class: "btn btn-success w-100 disabled" %>
-      <% else %>
-       <%= link_to "Secure my spot!", new_course_enrollment_path(@course), class: "btn btn-primary w-100" %>
-      <% end %>
+      <%= render 'cta_card' %>
     </div>
+
     <div class="col-12">
       <div style="width: 100%; height: 600px;"
         data-controller="map"

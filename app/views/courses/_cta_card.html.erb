@@ -1,0 +1,15 @@
+
+      <% if current_user.enrollments.find_by(course_id: @course)%>
+
+        <h5>You are enrolled in this course! 🎉</h5>
+        <p class="mb-2"><span>Dates: </span><%= @course.start_date.strftime('%d %b') %> - <%= @course.end_date.strftime("%d %b '%y") %></p>
+        <%= link_to "Already Purchased!", new_course_enrollment_path(@course), class: "btn btn-success w-100 disabled" %>
+
+      <% else %>
+
+        <h5>Level up your career</h5>
+        <p class="mb-2"><span>Dates: </span><%= @course.start_date.strftime('%d %b') %> - <%= @course.end_date.strftime("%d %b '%y") %></p>
+        <p class="mb-4">Price: $<%= @course.price %></p>
+        <%= link_to "Secure my spot!", new_course_enrollment_path(@course), class: "btn btn-primary w-100" %>
+
+      <% end %>
