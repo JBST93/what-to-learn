@@ -4,5 +4,8 @@ class Course < ApplicationRecord
   has_many :users, through: :enrollments
   has_one_attached :image
 
-  validates :title, :start_date, :end_date, :coordinates, :price, presence: true
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
+  validates :title, :start_date, :end_date, :price, presence: true
 end

@@ -6,6 +6,10 @@ class CoursesController < ApplicationController
     @courses = Course.all
   end
 
+  def show
+    @marker = {lat: @course.latitude, lng: @course.longitude}
+  end
+
   def new
     @course = Course.new
   end
@@ -19,9 +23,6 @@ class CoursesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def show
   end
 
   def edit
