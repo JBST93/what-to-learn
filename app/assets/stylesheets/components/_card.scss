@@ -4,7 +4,6 @@
 }
 
 .course-card {
-  background-color: hsl(0, 0%, 92%);
   border: 1px solid rgb(206, 206, 206);
   height: 296px;
   width: 376px;
@@ -15,7 +14,7 @@
 }
 
 .course-card .course-tag {
-  background-color: rgb(216, 215, 215);
+  background-color: rgba(79, 79, 79, 0.1);
   width: fit-content;
   padding: 4px 8px;
   border-radius: 8px;
@@ -23,14 +22,18 @@
 }
 
 .course-card .course-header {
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 14px;
   margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .course-card .course-title {
   font-size: 24px;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
+  font-style: normal;
   margin-bottom: 20px;
   height: 56px;
 }
@@ -40,15 +43,20 @@
   margin-bottom: 20px;
   height: 56px;
   line-height: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .course-card .course-creator {
   height: 48px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .course-card .creator-name {
   font-size: 18px;
-  font-weight: 500;
 }
 
 .course-card img {
