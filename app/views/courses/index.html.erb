@@ -13,9 +13,7 @@
 <div class="page-container">
   <div class="row gap-3 justify-content-between">
     <% @courses.each do |course| %>
-      <div class="course-card col-3 bg-body-secondary">
-        <%= render "shared/card", course: course %>
-      </div>
+      <%= render "shared/card", course: course %>
     <% end %>
   </div>
 </div>
