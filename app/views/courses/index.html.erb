@@ -1,11 +1,16 @@
 <div class="banner d-flex justify-content-center align-items-center">
   <div class="d-flex flex-column">
-    <h1 class="title mb-3">World-class live courses</h1>
+    <h1 class="title mb-3">Unlock your career potential</h1>
     <div class="d-flex flex-row mx-auto gap-3">
       <% if user_signed_in? %>
-        <p class="banner-text">Level up your career today</p>
+        <div class="d-flex flex-column justify-content-center align-items-center">
+          <p class="banner-text mt-2">Join world-class live courses anywhere in the world, to learn new skills and level up your career</p>
+        </div>
       <% else %>
-        <%= link_to "Start learning", new_user_registration_path, class: "btn btn-primary m-0" %>
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <p class="banner-text mt-2">Join world-class live courses anywhere in the world, to learn new skills and level up your career</p>
+        <%= link_to "Start learning", new_user_registration_path, class: "btn btn-outline-light w-25 mt-3" %>
+      </div>
       <% end %>
     </div>
   </div>
