@@ -1,3 +1,5 @@
 class UsersController < ApplicationController
-validates :first_name, presence: :true
+  def my_courses
+    @my_courses = Enrollment.where(user: current_user)
+  end
 end

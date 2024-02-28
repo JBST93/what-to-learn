@@ -1,0 +1,16 @@
+<div class="course-card col-3">
+  <%= link_to course_path(course), class: "text-decoration-none link-dark" do %>
+    <div class="d-flex flex-row align-items-center course-header">
+      <div class="course-tag"><%= course.tag %></div>
+      <p class="m-0">Starts on <%= course.start_date.strftime("%d %b") %></p>
+    </div>
+    <h3 class="course-title"><%= course.title %></h3>
+    <p class="course-description"><%= course.description %></p>
+    <div class="d-flex flex-row align-items-center course-creator">
+      <% if course.user.avatar.attached? %>
+        <%= cl_image_tag course.user.avatar.key %>
+      <% end %>
+      <p class="creator-name m-0 ms-3"><%= course.user.first_name %> <%= course.user.last_name %></p>
+    </div>
+  <% end %>
+</div>
