@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   get "/users/my_enrollments", to: "users#my_enrollments", as: "user_enrollments"
   get "/users/profile", to: "users#profile", as: "user_profile"
 
-
   resources :courses do
     resources :enrollments, only: [:new, :create]
     resources :reviews, only: [:index]

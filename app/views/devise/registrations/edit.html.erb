@@ -22,7 +22,7 @@
                         autofocus: true,
                         class: "form-control",
                         input_html: { autocomplete: "email" }%>
-            <%= f.input :role, label: "Change your role", class: "form-control", collection: User::ROLE %>
+            <%= f.input :role, label: "Change your role", class: "form-control", collection: User.roles.keys, selected: current_user.role %>
             <%= f.input :current_password,
               label:"To confirm changes, please provide your current password",
               hint: "We need your current password to confirm your changes",

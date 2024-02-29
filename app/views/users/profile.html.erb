@@ -3,15 +3,17 @@
       <div class="row justify-content-center">
         <div class="col-md-6">
           <div class="py-4 border-bottom">
-            <h1 class="mb-4">Hey, <%= current_user.first_name %>!</h1>
+            <h1 class="mb-4">Hey, <%= current_user.first_name.capitalize %>!</h1>
             <h5>Here are your details: </h5>
           </div>
+        <div class="col-md-6">
+        </div>
           <div class="row mt-4">
             <div class="col-md-6">
-              <p class="profile-text">First name: <%= current_user.first_name %></p>
+              <p class="profile-text">First name: <%= current_user.first_name.capitalize %></p>
             </div>
             <div class="col-md-6">
-              <p class="profile-text">Last name: <%= current_user.last_name %></p>
+              <p class="profile-text">Last name: <%= current_user.last_name.capitalize %></p>
             </div>
           </div>
           <div class="row">

@@ -1,7 +1,7 @@
-<% if current_user.role = "Student"%>
-    <%= render 'student' %>
+<% if @course.user == current_user %>
+  <%= render 'teacher' %>
 <% else %>
-    <%= render 'teacher' %>
+  <%= render 'student' %>
 <% end %>
 <div class="container mt-5">
   <div class="justify-content flex-start">
