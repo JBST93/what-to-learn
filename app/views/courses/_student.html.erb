@@ -1,0 +1,35 @@
+ <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+
+
+<div class="page-container">
+
+  <div class="d-flex flex-row gap-5">
+
+    <div class="col-9">
+      <h1 class="show-title mb-4"><%= @course.title %></h1>
+      <p class="show-description"><%= @course.description %></p>
+    </div>
+
+    <div class="col-3 enroll-card d-flex flex-column">
+      <%= render 'cta_card' %>
+    </div>
+
+  </div>
+
+  <div class="d-flex flex-row gap-5">
+    <div class="col-9">
+      <div style="width: 50%; height: 400px;"
+        data-controller="map"
+        data-map-marker-value="<%= @marker.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+
+      <div class="col-3 enroll-card mt-5">
+        <%= render 'courses/student/teacher_bio' %>
+      </div>
+    </div>
+
+  </div>
+  </div>
+</div>
