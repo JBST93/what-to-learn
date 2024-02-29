@@ -1,11 +1,9 @@
-  <div class="course-card col-3 bg-body-secondary" style="width: 32.33%">
+  <div class="course-card col-3 bg-body-secondary">
     <%= link_to course_path(course), class: "text-decoration-none link-dark" do %>
 
-      <div class="d-flex flex-row justify-content-between align-items-center course-header">
+      <div class="d-flex flex-row gap-3 align-items-center course-header">
 
         <div class="course-tag m-0"><%= course.tag %></div>
-        <div> <p class="m-0">Starts on <%= course.start_date.strftime("%d %b") %></p></div>
-
           <div class="">
               <% if course.end_date < Date.today %>
                 <div class="course-tag m-0" style="background-color:##F7F7F7">Finished</div>
@@ -15,17 +13,20 @@
                 <div class="course-tag m-0" style="background-color:#FFDA46">Coming Soon</div>
               <% end %>
           </div>
-
         </div>
 
-
       <h3 class="course-title"><%= course.title %></h3>
-      <p class="course-description"><%= course.description[0..110] %>...</p>
-      <div class="d-flex flex-row align-items-center course-creator">
-        <% if course.user.avatar.attached? %>
-          <%= cl_image_tag course.user.avatar.key %>
-        <% end %>
-        <p class="creator-name m-0 ms-3"><%= course.user.first_name %> <%= course.user.last_name %></p>
+      <p class="course-description"><%= course.description[0..130] %>...</p>
+      <div class="d-flex flex-row justify-content-between align-items-center course-creator">
+        <div class="d-flex flex-row justify-content-right align-items-center">
+          <% if course.user.avatar.attached? %>
+            <%= cl_image_tag course.user.avatar.key, class: "img" %>
+          <% else %>
+            <div class="img"></div>
+          <% end %>
+          <p class="creator-name m-0"><%= course.user.first_name %> <%= course.user.last_name %></p>
+        </div>
+        <i class="fa-solid fa-arrow-right"></i>
       </div>
     <% end %>
   </div>
