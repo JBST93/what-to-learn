@@ -4,6 +4,15 @@ class CoursesController < ApplicationController
 
   def index
     @courses = Course.all
+  if params[:query].present?
+
+    sql_query = <<~SQL
+    courses.title ILIKE :query
+    OR courses.description ILIKE :query
+    SQL
+
+    @courses = @courses.where(sql_query, query: "%#{params[:query]}%")
+    end
   end
 
   def show
@@ -12,6 +21,7 @@ class CoursesController < ApplicationController
 
   def new
     @course = Course.new
+    @course.user = current_user
   end
 
   def create
@@ -51,7 +61,9 @@ class CoursesController < ApplicationController
                                    :active,
                                    :tag,
                                    :text_editor,
-                                   :user_id)
+                                   :user_id,
+                                   :bio,
+                                   :address)
   end
 
   def set_course

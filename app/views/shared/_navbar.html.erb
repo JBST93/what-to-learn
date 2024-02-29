@@ -9,22 +9,37 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
       </ul>
 
       <ul class="navbar-nav mb-lg-0">
         <% if user_signed_in? %>
-          <li class="my-auto"><%= link_to "My Courses", user_enrollments_path, class: "nav-item navbar-link" %></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link navbar-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Settings
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Profile", edit_user_registration_path, class: "dropdown-item" %></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><%= link_to "Sign Out", destroy_user_session_path, data: { "turbo-method": :delete }, class: "dropdown-item"  %></li>
-            </ul>
-          </li>
+          <% if current_user.role == "Instructor" %>
+            <li class="nav-item my-auto"><div class="role-instructor"><span class="dot-instructor">• </span><%= current_user.role %></div></li>
+            <li class="my-auto"><%= link_to "My Courses", user_enrollments_path, class: "nav-item navbar-link" %></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link navbar-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Settings
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Profile", user_profile_path, class: "dropdown-item" %></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><%= link_to "Sign Out", destroy_user_session_path, data: { "turbo-method": :delete }, class: "dropdown-item"  %></li>
+              </ul>
+            </li>
+          <% else %>
+             <li class="nav-item my-auto"><div class="role-student"><span class="dot-student">• </span><%= current_user.role %></div></li>
+            <li class="my-auto"><%= link_to "My Courses", user_enrollments_path, class: "nav-item navbar-link" %></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link navbar-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Settings
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Profile", user_profile_path, class: "dropdown-item" %></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><%= link_to "Sign Out", destroy_user_session_path, data: { "turbo-method": :delete }, class: "dropdown-item"  %></li>
+              </ul>
+            </li>
+          <% end %>
         <% else %>
           <%= link_to "Login", new_user_session_path, class: "nav-item btn btn-light border border-secondary" %>
           <%= link_to "Sign up", new_user_registration_path, class: "nav-item btn btn-primary ms-4" %>

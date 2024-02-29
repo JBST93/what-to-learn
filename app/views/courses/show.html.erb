@@ -1,23 +1,5 @@
-  <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
-
-
-<div class="page-container">
-  <div class="row gap-5">
-    <div class="col-8">
-      <h1 class="show-title mb-4"><%= @course.title %></h1>
-      <p class="show-description"><%= @course.description %></p>
-    </div>
-
-    <div class="col-3 enroll-card d-flex flex-column">
-      <%= render 'cta_card' %>
-    </div>
-
-    <div class="col-12">
-      <div style="width: 100%; height: 600px;"
-        data-controller="map"
-        data-map-marker-value="<%= @marker.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
-    </div>
-  </div>
-</div>
+<% if current_user.role = "Student"%>
+<%= render 'student' %>
+<% else %>
+<%= render 'teacher' %>
+<% end %>
