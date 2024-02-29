@@ -1,0 +1,47 @@
+<div class="container pt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h1>Create a new course</h1>
+      <p>Required fields have an asterisk: *</p>
+      <%= simple_form_for @course do |f| %>
+        <%= f.error_notification %>
+
+          <div class="form-inputs">
+          <div class="row">
+            <%= f.input :title, required: true, class: "form-control", label: "Title" %>
+          </div>
+          <div class="row">
+            <%= f.input :description, required: true, class: "form-control", label: "Describe your course" %>
+          </div>
+          <div class="row">
+            <%= f.input :bio, required: true, class: "form-control", label: "Describe yourself as an instructor" %>
+          </div>
+          <div class="row">
+            <%= f.input :start_date, as: :date %>
+          </div>
+          <div class="row">
+            <%= f.input :end_date, as: :date %>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <%= f.input :tag %>
+            </div>
+            <div class="col-6">
+              <%= f.input :price, as: :integer %>
+            </div>
+          <div class="row">
+          </div>
+            <%= f.input :address %>
+          </div>
+          <div class="row">
+            <%= f.input :text_editor, required: true, class: "form-control", label: "Add a welcome message for students" %>
+          </div>
+        </div>
+
+        <div class="form-actions">
+        <%= f.button :submit, "Create my Account", class: "w-100 mt-2 btn btn-primary btn-block align-center" %>
+        </div>
+      <% end %>
+</div>
+</div>
+</div>
