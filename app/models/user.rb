@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  ROLE = ["Student", "Instructor"]
   has_one_attached :avatar
   has_one :creditcard
   has_many :enrollments, dependent: :destroy
@@ -13,4 +12,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  enum role: [:student, :instructor]
 end
