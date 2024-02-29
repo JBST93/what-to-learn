@@ -42,3 +42,41 @@
   width: 40px;
   margin-right: 24px;
 }
+
+.role-instructor {
+  font-size: 14px;
+  width: fit;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background-color: rgb(228, 228, 255);
+  border: 1px solid rgb(0, 0, 208);
+  border-radius: 20px;
+  margin: 0;
+}
+
+.role-student {
+  font-size: 14px;
+  width: fit;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background-color: rgb(222, 245, 230);
+  border: 1px solid rgb(0, 103, 36);
+  border-radius: 20px;
+  margin: 0;
+}
+
+.dot-instructor {
+  color: rgb(0, 0, 208);
+  size: 28px;
+  text-shadow: 0 0 1px rgb(86, 86, 255);
+}
+
+.dot-student {
+  color: rgb(0, 103, 36);
+  size: 28px;
+  text-shadow: 0 0 1px rgb(0, 103, 36);
+}
