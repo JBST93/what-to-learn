@@ -15,9 +15,13 @@
     </div>
   </div>
 </div>
+
+<%= render "search_bar" %>
+
+
 <div class="page-container">
   <h3 class="find-courses m-0 p-0">Find your next course</h3>
-  <div class="row gap-3 justify-content-between">
+  <div class="row gap-3">
     <% @courses.each do |course| %>
       <%= render "shared/card", course: course %>
     <% end %>
