@@ -11,7 +11,7 @@
 require 'faker'
 
 puts "Seeding the DB.. "
-
+Creditcard.destroy_all
 Course.destroy_all
 User.destroy_all
 
