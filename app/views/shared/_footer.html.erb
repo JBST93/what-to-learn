@@ -1,61 +1,55 @@
-<div class="border-top">
-      <div class="container">
-        <footer class="py-5">
-          <div class="row d-flex justify-content-between">
-            <div class="col-6 col-md-2 mb-3">
-              <h5>What To Learn</h5>
-              <ul class="nav flex-column">
-                <li class="nav-item mb-2">
-                  <%= link_to "Home", courses_path, class: "nav-link p-0 text-muted" %>
-                </li>
-                <li class="nav-item mb-2">
-                  <%= link_to "About", courses_path, class: "nav-link p-0 text-muted" %>
-                </li>
-                <li class="nav-item mb-2">
-                  <%= link_to "Careers", courses_path, class: "nav-link p-0 text-muted" %>
-                </li>
-                <li class="nav-item mb-2">
-                  <%= link_to "Terms", courses_path, class: "nav-link p-0 text-muted" %>
-                </li>
-                <li class="nav-item mb-2">
-                  <%= link_to "Privacy", courses_path, class: "nav-link p-0 text-muted" %>
-                </li>
-              </ul>
-            </div>
-            <div class="col-6 col-md-2 mb-3">
-              <h5>Follow Us</h5>
-              <ul class="nav flex-column">
-                <li class="nav-item mb-2">
-                  <%= link_to courses_path do %>
-                    <i class="fa-brands fa-x-twitter fa-lg text-muted"></i>
-                  <% end %>
-                </li>
-                <li class="nav-item mb-2">
-                  <%= link_to courses_path do %>
-                    <i class="fa-brands fa-instagram fa-lg text-muted"></i>
-                  <% end %>
-                </li>
-                <li class="nav-item mb-2">
-                  <%= link_to courses_path do %>
-                    <i class="fa-brands fa-linkedin-in fa-lg text-muted"></i>
-                  <% end %>
-                </li>
-                <li class="nav-item mb-2">
-                  <%= link_to courses_path do %>
-                    <i class="fa-brands fa-facebook-f fa-lg text-muted"></i>
-                  <% end %>
-                </li>
-                <li class="nav-item mb-2">
-                  <%= link_to courses_path do %>
-                    <i class="fa-brands fa-youtube fa-lg text-muted"></i>
-                  <% end %>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="d-flex py-4 my-4 border-top">
-            <p>© 2024 What To Learn, Inc</p>
-          </div>
-        </footer>
+<div class="border-top mt-5">
+  <div class="container">
+    <footer class="pt-4">
+      <h5>What To Learn</h5>
+      <ul class="ul-footer">
+        <li class="li-footer">
+          <%= link_to "Home", courses_path, class: "link-footer" %>
+        </li>
+        <li class="li-footer">
+          <%= link_to "About", courses_path, class: "link-footer" %>
+        </li>
+        <li class="li-footer">
+          <%= link_to "Careers", courses_path, class: "link-footer" %>
+        </li>
+        <li class="li-footer">
+          <%= link_to "Terms", courses_path, class: "link-footer" %>
+        </li>
+        <li class="li-footer">
+          <%= link_to "Privacy", courses_path, class: "link-footer" %>
+        </li>
+      </ul>
+      <h5>Follow Us</h5>
+      <ul class="ul-footer">
+        <li class="li-footer">
+          <%= link_to courses_path do %>
+            <i class="fa-brands fa-x-twitter fa-lg link-footer"></i>
+          <% end %>
+        </li>
+        <li class="li-footer">
+          <%= link_to courses_path do %>
+            <i class="fa-brands fa-instagram fa-lg link-footer"></i>
+          <% end %>
+        </li>
+        <li class="li-footer">
+          <%= link_to courses_path do %>
+            <i class="fa-brands fa-linkedin-in fa-lg link-footer"></i>
+          <% end %>
+        </li>
+        <li class="li-footer">
+          <%= link_to courses_path do %>
+            <i class="fa-brands fa-facebook-f fa-lg link-footer"></i>
+          <% end %>
+        </li>
+        <li class="li-footer">
+          <%= link_to courses_path do %>
+            <i class="fa-brands fa-youtube fa-lg link-footer"></i>
+          <% end %>
+        </li>
+      </ul>
+      <div class="pt-4 pb-2 border-top">
+        <p>© 2024 What To Learn, Inc. All rights reserved.</p>
       </div>
-    </div>
+    </footer>
+  </div>
+</div>
