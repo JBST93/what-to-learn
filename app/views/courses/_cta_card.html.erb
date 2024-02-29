@@ -1,0 +1,25 @@
+    <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js"></script>
+
+
+      <% if current_user.enrollments.find_by(course_id: @course)%>
+
+        <h5>You are enrolled in this course! 🎉</h5>
+        <p class="mb-2"><span>Dates: </span><%= @course.start_date.strftime('%d %b') %> - <%= @course.end_date.strftime("%d %b '%y") %></p>
+        <div title="Add to Calendar" class="addeventatc">
+        Add Course to Calendar
+          <span class="start"><%= @course.start_date %></span>
+          <span class="end"><%= @course.end_date %></span>
+          <span class="timezone">Europe/London</span>
+          <span class="title"><%= @course.title%></span>
+          <span class="description"><%= @course.description%></span>
+          <span class="location"><%= @course.address %></span>
+        </div>
+
+      <% else %>
+
+        <h5>Level up your career</h5>
+        <p class="mb-2"><span>Dates: </span><%= @course.start_date.strftime('%d %b') %> - <%= @course.end_date.strftime("%d %b '%y") %></p>
+        <p class="mb-4">Price: $<%= @course.price %></p>
+        <%= link_to "Secure my spot!", new_course_enrollment_path(@course), class: "btn btn-primary w-100" %>
+
+      <% end %>

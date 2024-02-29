@@ -8,9 +8,6 @@ class CoursesController < ApplicationController
 
   def show
     @marker = {lat: @course.latitude, lng: @course.longitude}
-    unless current_user.enrollments != nil
-      @paid = current_user.enrollments.find_by(course_id: @course).paid
-    end
   end
 
   def new
