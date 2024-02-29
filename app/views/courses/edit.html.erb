@@ -39,6 +39,7 @@
         <div class="form-actions">
         <%= f.button :submit, "Confirm changes", class: "w-100 mt-2 btn btn-primary btn-block align-center" %>
         </div>
+        <div class=""><%= button_to "Delete course", courses_path(@course), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: "w-100 mt-3 btn btn-light border border-secondary btn-block" %></div>
       <% end %>
     </div>
 </div>

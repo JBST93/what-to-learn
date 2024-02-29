@@ -10,10 +10,14 @@
   border-radius: 12px;
   padding: 24px 32px 32px 32px;
   color: black;
+  background-color: #cecece;
+
+  &:hover {
+    outline: 1px solid rgb(255, 0, 170);
+  }
 }
 
 .course-card .course-tag {
-  background-color: rgba(79, 79, 79, 0.1);
   width: fit-content;
   padding: 5px 10px;
   border-radius: 8px;

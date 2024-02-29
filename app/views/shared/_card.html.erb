@@ -1,32 +1,33 @@
-  <div class="course-card col-3 bg-body-secondary">
-    <%= link_to course_path(course), class: "text-decoration-none link-dark" do %>
+<% colors_array = [  "#d8e5e9", "#ffcccc", "#e6d9e6", "#ffe6cc", "#ffe6cc", "#f2f2ff", "#ffebf2","#f0f8ff", "#ffe4e1", "#f5f5dc", "#f0fff0", "#faf0e6", "#f0ffff", "#f5deb3", "#f0f8ff"] %>
+<div class="course-card col-3 bg-body-secondary">
+  <%= link_to course_path(course), class: "text-decoration-none link-dark" do %>
 
-      <div class="d-flex flex-row gap-3 align-items-center course-header">
+    <div class="d-flex flex-row gap-3 align-items-center course-header">
 
-        <div class="course-tag m-0"><%= course.tag %></div>
-          <div class="">
-              <% if course.end_date < Date.today %>
-                <div class="course-tag m-0" style="background-color:##F7F7F7">Finished</div>
-              <% elsif course.start_date <= Date.today && course.end_date >= Date.today %>
-                <div class="course-tag m-0" style="background-color:#81B622">On-going</div>
-              <% else %>
-                <div class="course-tag m-0" style="background-color:#FFDA46">Coming Soon</div>
-              <% end %>
-          </div>
+      <div class="course-tag m-0", style="background-color: <%= colors_array.sample %>; border: 0.5px solid lightgray"><%= course.tag %></div><%=  %>
+        <div class="">
+            <% if course.end_date < Date.today %>
+              <div class="course-tag m-0" style="border: 1px solid lightgray;">Finished</div>
+            <% elsif course.start_date <= Date.today && course.end_date >= Date.today %>
+              <div class="course-tag m-0" style="border: 1px solid black;">On-going</div>
+            <% else %>
+              <div class="course-tag m-0" style="border: 1px solid navy; color: navy;">Coming Soon</div>
+            <% end %>
         </div>
-
-      <h3 class="course-title"><%= course.title %></h3>
-      <p class="course-description"><%= course.description[0..130] %>...</p>
-      <div class="d-flex flex-row justify-content-between align-items-center course-creator">
-        <div class="d-flex flex-row justify-content-right align-items-center">
-          <% if course.user.avatar.attached? %>
-            <%= cl_image_tag course.user.avatar.key, class: "img" %>
-          <% else %>
-            <div class="img"></div>
-          <% end %>
-          <p class="creator-name m-0"><%= course.user.first_name %> <%= course.user.last_name %></p>
-        </div>
-        <i class="fa-solid fa-arrow-right"></i>
       </div>
-    <% end %>
-  </div>
+
+    <h3 class="course-title"><%= course.title %></h3>
+    <p class="course-description"><%= course.description[0..130] %>...</p>
+    <div class="d-flex flex-row justify-content-between align-items-center course-creator">
+      <div class="d-flex flex-row justify-content-right align-items-center">
+        <% if course.user.avatar.attached? %>
+          <%= cl_image_tag course.user.avatar.key, class: "img" %>
+        <% else %>
+          <div class="img"></div>
+        <% end %>
+        <p class="creator-name m-0"><%= course.user.first_name %> <%= course.user.last_name %></p>
+      </div>
+      <i class="fa-solid fa-arrow-right"></i>
+    </div>
+  <% end %>
+</div>
