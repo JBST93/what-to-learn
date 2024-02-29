@@ -9,9 +9,9 @@
         <% @my_enrollments.each do |my_enrollment| %>
           <%= render partial: 'shared/card', locals: { course: my_enrollment.course } %>
         <% end %>
+      <div data-controller="calendar" class="enrollments-text">
+      </div>
     <% end %>
-    <div data-controller="calendar" class="enrollments-text">
-    </div>
   <% else %>
   <p>You are a <%= current_user.role %></p>
   <% end %>
