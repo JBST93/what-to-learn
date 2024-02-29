@@ -44,8 +44,7 @@ class CoursesController < ApplicationController
   end
 
   def destroy
-    @course.destroy
-
+    @course.delete
     redirect_to courses_path, status: :see_other
   end
 
