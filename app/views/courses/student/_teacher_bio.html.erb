@@ -1,8 +1,9 @@
 <h3>Instructor's Bio!</h3>
 
-<% if @course.user.avatar.attached? %>
+<% if @course.user.avatar.key %>
   <%= cl_image_tag @course.user.avatar.key, height: 300, width: 400, crop: :fill %>
 <% end %>
+
 
 <%= @course.user.first_name.capitalize %>
 <%= @course.user.last_name.capitalize %>
