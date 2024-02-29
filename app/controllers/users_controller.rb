@@ -6,4 +6,7 @@ class UsersController < ApplicationController
     events = enrollments.map { |enrollment| { title: enrollment.course.title, start_date: enrollment.course.start_date } }
     # render json: events
   end
+
+  def profile
+  end
 end
