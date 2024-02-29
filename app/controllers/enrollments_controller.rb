@@ -6,7 +6,6 @@ class EnrollmentsController < ApplicationController
     @credit_card = Creditcard.new
     @enrollment.course = @course
     @enrollment.user = current_user
-
   end
 
   def create
