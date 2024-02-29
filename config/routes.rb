@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'reviews/create'
   devise_for :users
   root to: "courses#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -15,6 +16,8 @@ Rails.application.routes.draw do
 
   resources :courses do
     resources :enrollments, only: [:new, :create]
+    resources :reviews, only: [:index]
+
   end
   resources :enrollments, only: [:index, :show, :destroy]
 
