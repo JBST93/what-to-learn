@@ -23,6 +23,11 @@
           <div class="row">
             <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-primary" %>
           </div>
+          <% if current_user.role == "Instructor" %>
+            <div class="row">
+              <%= link_to "Create a new course", new_course_path, class: "btn btn-primary mt-3" %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

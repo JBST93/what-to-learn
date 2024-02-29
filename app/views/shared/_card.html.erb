@@ -1,16 +1,31 @@
-<div class="course-card col-3 bg-body-secondary" style="width: 32.33%">
-  <%= link_to course_path(course), class: "text-decoration-none link-dark" do %>
-    <div class="d-flex flex-row align-items-center course-header">
-      <div class="course-tag"><%= course.tag %></div>
-      <p class="m-0">Starts on <%= course.start_date.strftime("%d %b") %></p>
-    </div>
-    <h3 class="course-title"><%= course.title %></h3>
-    <p class="course-description"><%= course.description %></p>
-    <div class="d-flex flex-row align-items-center course-creator">
-      <% if course.user.avatar.attached? %>
-        <%= cl_image_tag course.user.avatar.key %>
-      <% end %>
-      <p class="creator-name m-0 ms-3"><%= course.user.first_name %> <%= course.user.last_name %></p>
-    </div>
-  <% end %>
-</div>
+  <div class="course-card col-3 bg-body-secondary" style="width: 32.33%">
+    <%= link_to course_path(course), class: "text-decoration-none link-dark" do %>
+
+      <div class="d-flex flex-row justify-content-between align-items-center course-header">
+
+        <div class="course-tag m-0"><%= course.tag %></div>
+        <div> <p class="m-0">Starts on <%= course.start_date.strftime("%d %b") %></p></div>
+
+          <div class="">
+              <% if course.end_date < Date.today %>
+                <div class="course-tag m-0" style="background-color:##F7F7F7">Finished</div>
+              <% elsif course.start_date <= Date.today && course.end_date >= Date.today %>
+                <div class="course-tag m-0" style="background-color:#81B622">On-going</div>
+              <% else %>
+                <div class="course-tag m-0" style="background-color:#FFDA46">Coming Soon</div>
+              <% end %>
+          </div>
+
+        </div>
+
+
+      <h3 class="course-title"><%= course.title %></h3>
+      <p class="course-description"><%= course.description %></p>
+      <div class="d-flex flex-row align-items-center course-creator">
+        <% if course.user.avatar.attached? %>
+          <%= cl_image_tag course.user.avatar.key %>
+        <% end %>
+        <p class="creator-name m-0 ms-3"><%= course.user.first_name %> <%= course.user.last_name %></p>
+      </div>
+    <% end %>
+  </div>
