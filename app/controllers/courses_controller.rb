@@ -60,7 +60,9 @@ class CoursesController < ApplicationController
                                    :active,
                                    :tag,
                                    :text_editor,
-                                   :user_id)
+                                   :user_id,
+                                   :bio,
+                                   :address)
   end
 
   def set_course

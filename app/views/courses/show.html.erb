@@ -3,3 +3,14 @@
 <% else %>
   <%= render 'student' %>
 <% end %>
+<% @course.reviews.each do |review| %>
+  <div>
+    <% review.rating.times do %>
+      <i class="fas fa-star star-yellow"></i>
+    <% end %>
+    <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
+    <p class="mb-0"><%= review.comment %></p>
+    <p class="mb-0"><%= review.course.user.first_name %></p>
+
+  </div>
+<% end %>

@@ -16,7 +16,9 @@
   </div>
 
   <div class="d-flex flex-row gap-5">
+
     <div class="col-9">
+      <i class="fa-solid fa-location-pin"></i> <%= @course.address %>
       <div style="width: 50%; height: 400px;"
         data-controller="map"
         data-map-marker-value="<%= @marker.to_json %>"
