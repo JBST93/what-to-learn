@@ -1,0 +1,21 @@
+footer {
+  text-align: center;
+}
+
+.ul-footer {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding-left: 0 !important
+}
+
+.link-footer {
+  padding: 0 20px;
+  color: darkgrey;
+  text-decoration: none;
+  transition: color 0.5s ease;
+
+  &:hover {
+    color: black;
+  }
+}
