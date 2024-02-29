@@ -2,7 +2,7 @@
   <div class="mt-4 mb-5">
     <% if current_user.student? %>
       <div class="d-flex">
-        <h1 class="enrollments-title">Hi <%= current_user.first_name%></h1>
+        <h1 class="enrollments-title">Hi <%= current_user.first_name.capitalize%> 👋 </h1>
       </div>
       <% if @my_enrollments.empty? %>
         <h5 class="mt-4">You have not enrolled in any course, we suggest you enroll in one!</h5>
@@ -17,7 +17,7 @@
       <% end %>
     <% else %>
       <div class="d-flex flex-row justify-content-between align-items-center">
-        <h1 class="enrollments-title">Hi <%= current_user.first_name%></h1>
+        <h1 class="enrollments-title">Hi <%= current_user.first_name.capitalize%> 👋 </h1>
         <%= link_to "Create a course", new_course_path, class: "btn btn-primary" %>
       </div>
       <% if @my_courses.empty? %>
@@ -30,7 +30,15 @@
         </div>
       <% end %>
     <% end %>
+
   </div>
-  <div data-controller="calendar" class="enrollments-text">
+  <div class="calendar w-50" data-controller="calendar" class="enrollments-text">
   </div>
 </div>
+
+<style>
+  #calendar {
+    width: 50%;
+    margin: 0 auto;
+}
+</style>
