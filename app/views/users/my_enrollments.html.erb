@@ -1,15 +1,17 @@
 <div class="page-container">
   <h3>You are a <%= current_user.role %></h3>
-  <% if current_user.role == 'Student' %>
+  <% if current_user.role == 'student' %>
     <% if @my_enrollments.empty? %>
       <h1 class="enrollments-title">You have not enrolled in any course</h1>
       <p>We suggest you enrol in one!</p>
       <%= link_to "Explore courses", courses_path, class: "btn btn-primary" %>
     <% else %>
       <h1 class="enrollments-title">Hi <%= current_user.first_name%>, here are your enrollments</h1>
-      <% @my_enrollments.each do |my_enrollment| %>
-        <%= render partial: 'shared/card', locals: { course: my_enrollment.course } %>
-      <% end %>
+      <div class="row gap-3">
+        <% @my_enrollments.each do |my_enrollment| %>
+          <%= render partial: 'shared/card', locals: { course: my_enrollment.course } %>
+        <% end %>
+      </div>
     <% end %>
   <% else %>
     <% if @courses.empty? %>
@@ -18,9 +20,11 @@
       <%= link_to "Create a course", new_course_path, class: "btn btn-primary" %>
     <% else %>
       <h1>Hi <%= current_user.first_name %>, here are your courses</h1>
-      <% @courses.each do |my_course| %>
-        <%= render partial: 'shared/card', locals: { course: my_course } %>
-      <% end %>
+      <div class="row gap-3">
+        <% @courses.each do |my_course| %>
+          <%= render partial: 'shared/card', locals: { course: my_course } %>
+        <% end %>
+      </div>
     <% end %>
   <% end %>
   <div data-controller="calendar" class="enrollments-text">
