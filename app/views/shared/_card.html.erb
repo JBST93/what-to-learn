@@ -20,7 +20,7 @@
 
 
       <h3 class="course-title"><%= course.title %></h3>
-      <p class="course-description"><%= course.description %></p>
+      <p class="course-description"><%= course.description[0..110] %>...</p>
       <div class="d-flex flex-row align-items-center course-creator">
         <% if course.user.avatar.attached? %>
           <%= cl_image_tag course.user.avatar.key %>
