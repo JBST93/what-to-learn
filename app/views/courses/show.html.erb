@@ -1,17 +1,22 @@
-
-<% if current_user.role = "Student"%>
-<%= render 'student' %>
-<% @course.reviews.each do |review| %>
-        <div>
-          <% review.rating.times do %>
-            <i class="fas fa-star star-yellow"></i>
-          <% end %>
-          <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
-          <p class="mb-0"><%= review.comment %></p>
-          <p class="mb-0"><%= review.course.user.first_name %></p>
-
+    <% if current_user.role = "Student"%>
+    <%= render 'student' %>
+<div class="container">
+  <div class="justify-content flex-start">
+      <h6>(69 RATINGS)</h6>
+      <h3>What students are saying</h3>
+        <% @course.reviews.each do |review| %>
+        <% review.rating.times do %>
+          <i class="fas fa-star star-yellow"style="color:#FFEA00"></i>
+        <% end %>
+        <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
+        <p class="mb-0"><%= review.comment %></p>
+        <p class="mb-0"><%= review.course.user.first_name %></p>
         </div>
+
+
       <% end %>
-<% else %>
-<%= render 'teacher' %>
-<% end %>
+    <% else %>
+    <%= render 'teacher' %>
+    <% end %>
+  </div>
+</div>
