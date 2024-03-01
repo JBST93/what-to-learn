@@ -65,7 +65,8 @@ class CoursesController < ApplicationController
                                    :tag,
                                    :text_editor,
                                    :user_id,
-                                   :bio,
+                                   :prep,
+                                   :welcome_message,
                                    :address)
   end
 
