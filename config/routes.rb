@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   get "/users/my_enrollments", to: "users#my_enrollments", as: "user_enrollments"
+
+
   get "/users/profile", to: "users#profile", as: "user_profile"
 
   resources :courses do
@@ -20,5 +22,7 @@ Rails.application.routes.draw do
   end
   resources :enrollments, only: [:index, :show, :destroy]
 
-  resources :users
+  resources :users do
+    resources :messages, only: [:index, :new, :create]
+  end
 end
