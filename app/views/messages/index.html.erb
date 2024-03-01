@@ -1,10 +1,11 @@
 <div class="container pt-5">
   <div class="row pb-5">
     <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">
-          <h5 class="card-title">Messages</h5>
-          <%= link_to "New Message", new_user_message_path, class: "btn btn-primary float-right" %>
+      <div class="mb-5">
+          <h3>Tickets</h3>
+          <% if current_user.role == "student" %>
+            <%= link_to "New Message", new_user_message_path, class: "btn btn-primary float-right" %>
+          <% end %>
         </div>
         <div class="card-body">
           <% @messages.each do |message| %>
@@ -22,14 +23,17 @@
                 </div>
                 <div class="card-body">
                   <p class="card-text"><strong>Message:</strong> <%= message.content %></p>
+                  <% if current_user.role == "instructor" %>
+                    <%= link_to "Respond", new_user_message_path(sender_id: message.recipient_id, recipient_id: message.sender_id), class: "btn btn-primary" %>
+                  <% end %>
                 </div>
-                <div class="card-footer text-muted">
+                <div class="card-footer bg-light">
+                  <p><strong>Sent:</strong> <%= message.created_at.strftime("%B %d, %Y at %I:%M %p") %> (<%= time_ago_in_words(message.created_at) %> ago)</p>
                 </div>
               </div>
             <% end %>
           <% end %>
         </div>
-      </div>
     </div>
   </div>
 </div>
