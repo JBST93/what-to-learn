@@ -16,6 +16,7 @@ class CoursesController < ApplicationController
   end
 
   def show
+    @review = Review.new
     @marker = {lat: @course.latitude, lng: @course.longitude}
   end
 

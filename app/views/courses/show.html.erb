@@ -14,19 +14,10 @@
         <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
         <p class="mb-0"><%= review.comment %></p>
         <p class="mb-0"><%= review.course.user.first_name %></p>
+    <% end %>
 
-      <% end %>
-    <div class="card text-center">
-      <div class="card-header">
-        Featured
-      </div>
-      <div class="card-body">
-        <p class="card-text">Write your review here.</p>
-        <a href="#" class="btn btn-secondary">Submit</a>
-      </div>
-      <div class="card-footer text-muted">
-        2 days ago
-      </div>
-    </div>
+    <%# <% if user_signed_in? %> %>
+      <%= render 'review' %>
+    <%# <% end %> %>
   </div>
 </div>
