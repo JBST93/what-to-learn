@@ -1,7 +1,7 @@
 <% if @course.user == current_user %>
-  <%= render 'teacher' %>
+  <%= render 'courses/teacher' %>
 <% else %>
-  <%= render 'student' %>
+  <%= render 'courses/student' %>
 <% end %>
 <div class="container mt-5">
   <div class="justify-content flex-start">
@@ -9,15 +9,17 @@
     <h3>What students are saying</h3>
     <% @course.reviews.each do |review| %>
         <% review.rating.times do %>
-          <i class="fas fa-star star-yellow"style="color:#FFEA00"></i>
+         ⭐️
         <% end %>
         <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
+        <% if review %>
         <p class="mb-0"><%= review.comment %></p>
-        <p class="mb-0"><%= review.course.user.first_name %></p>
+        <p class="mb-0"><%= review.user.first_name.capitalize %></p>
+        <% end %>
     <% end %>
 
     <% if user_signed_in? %>
-      <%= render 'review' %>
+      <%= render 'courses/review' %>
     <% end %>
   </div>
 </div>

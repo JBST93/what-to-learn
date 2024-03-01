@@ -5,17 +5,17 @@
         <%= f.input :comment, label: 'Share your experience', placeholder: 'Enter your review here...', input_html: { rows: 3 } %>
       </p>
       <%= f.button :submit, 'Submit Review', class: 'btn btn-secondary' %>
-  <div class="form-group">
-    <label class="control-label col-sm-2">Rating</label>
-    <div class="col-sm-10">
-      <div class="rating">
-        <% (1..5).each do |star| %>
-          <%= f.radio_button :rating, star, class: 'rating-input', id: "rating-#{star}" %>
-          <%= f.label "rating-#{star}", "☆", class: 'rating-star', title: "#{star} stars" %>
-        <% end %>
+      <div class="form-group">
+        <label class="control-label col-sm-12">Rating</label>
+        <div class="col-sm-12">
+          <div class="rating">
+            <% (1..5).each do |star| %>
+              <%= f.radio_button :rating, star, class: 'rating-input', id: "rating-#{star}" %>
+              <%= f.label "rating-#{star}", "⭐️", class: 'rating-star', title: "#{star} stars" %>
+            <% end %>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
     </div>
   <% end %>
   <div class="card-footer text-muted">
