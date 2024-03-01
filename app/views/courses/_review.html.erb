@@ -11,7 +11,7 @@
           <div class="rating">
             <% (1..5).each do |star| %>
               <%= f.radio_button :rating, star, class: 'rating-input', id: "rating-#{star}" %>
-              <%= f.label "rating-#{star}", "☆", class: 'rating-star', title: "#{star} stars" %>
+              <%= f.label "rating-#{star}", "⭐️", class: 'rating-star', title: "#{star} stars" %>
             <% end %>
           </div>
         </div>
