@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :courses do
     resources :enrollments, only: [:new, :create]
-    resources :reviews, only: [:index]
+    resources :reviews, only: [:index, :new, :create]
 
   end
   resources :enrollments, only: [:index, :show, :destroy]

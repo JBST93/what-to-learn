@@ -1,0 +1,17 @@
+<div class="card text-center">
+  <div class="card-header">
+    Add Your Review
+  </div>
+  <%= simple_form_for([@course, @review]) do |f| %>
+    <div class="card-body">
+      <h5 class="card-title">Share your experience</h5>
+      <p class="card-text">
+        <%= f.input :comment, label: 'Review', placeholder: 'Enter your review here...', input_html: { rows: 3 } %>
+      </p>
+      <%= f.button :submit, 'Submit Review', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+  <div class="card-footer text-muted">
+    Reviews help others learn more about the product!
+  </div>
+</div>
