@@ -1,36 +1,56 @@
 <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
-
+<% colors_array = [  "#d8e5e9", "#ffcccc", "#e6d9e6", "#ffe6cc", "#ffe6cc", "#f2f2ff", "#ffebf2","#f0f8ff", "#ffe4e1", "#f5f5dc", "#f0fff0", "#faf0e6", "#f0ffff", "#f5deb3", "#f0f8ff"] %>
 <div class="page-container">
-
-  <div class="d-flex flex-row gap-5">
-
-    <div class="col-9">
-      <h1 class="show-title mb-4"><%= @course.title %></h1>
-      <p class="show-description"><%= @course.description %></p>
-    </div>
-
-    <div class="col-3 enroll-card d-flex flex-column">
-      <%= render 'cta_card' %>
-    </div>
-
-  </div>
-
-  <div class="d-flex flex-row gap-5">
-
-    <div class="col-9">
-      <i class="fa-solid fa-location-pin"></i> <%= @course.address %>
-      <div style="width: 50%; height: 400px;"
-        data-controller="map"
-        data-map-marker-value="<%= @marker.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="d-flex flex-row gap-5 justify-content-between">
+    <div class="col-7 d-flex flex-column gap-4">
+      <div class="row gap-3 m-0 pb-4 border-bottom">
+        <h1 class="show-title p-0"><%= @course.title %></h1>
+        <p class="show-description p-0"><%= @course.description %></p>
+        <div class="d-flex flex-row gap-3 p-0 pb-3">
+          <div class="course-tag", style="background-color: <%= colors_array.sample %>; border: 0.5px solid lightgray">
+          <%= @course.tag %>
+          </div>
+          <div class="">
+              <% if @course.end_date < Date.today %>
+                <div class="course-tag m-0" style="border: 1px solid lightgray;">Finished</div>
+              <% elsif @course.start_date <= Date.today && @course.end_date >= Date.today %>
+                <div class="course-tag m-0" style="border: 1px solid black;">On-going</div>
+              <% else %>
+                <div class="course-tag m-0" style="border: 1px solid navy; color: navy;">Coming Soon</div>
+              <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="row m-0 p-0 pt-3">
+        <h4 class="m-0 p-0 mb-4">Why take this course?</h4>
+        <div class="d-flex flex-row p-0 gap-3 mb-4">
+          <p><%= @course.text_editor %></p>
+        </div>
+      </div>
+      <div class="row m-0 p-0">
+        <h4 class="m-0 p-0 mb-4">Location</h4>
+        <div class="d-flex flex-row p-0 gap-3 mb-4">
+          <i class="fa-solid fa-location-dot"></i>
+          <p class="location-text"><%= @course.address %></p>
+        </div>
+          <div style="width: 100%; height: 400px;"
+            data-controller="map"
+            data-map-marker-value="<%= @marker.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
       </div>
     </div>
 
-      <div class="col-3 enroll-card mt-5">
-        <%= render 'courses/student/teacher_bio' %>
+    <div class="col-3 d-flex flex-column">
+      <div class="sticky-top">
+        <div class="enroll-card d-flex flex-column mb-1">
+        <%= render 'cta_card' %>
+        </div>
+        <div class="enroll-card-2 mt-4">
+          <%= render 'courses/student/teacher_bio' %>
+        </div>
       </div>
     </div>
+  </div>
 
-  </div>
-  </div>
 </div>
