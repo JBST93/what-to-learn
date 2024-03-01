@@ -3,13 +3,13 @@
     <div class="col-sm-4">
       <h2 class="form-title m-0">Find Your <strong>Dream Course</strong></h2>
     </div>
-    <div class="col-sm-7">
+    <div class="col-sm-7 search-bar-container">
       <%= form_with url: courses_path, method: :get, class: "d-flex w-100" do %>
         <%= text_field_tag :query,
               params[:query],
-              class: "form-control form-control-lg",
+              class: "form-control form-control-lg search-bar",
               placeholder: "e.g. Web Development Bootcamp"%>
-        <%= submit_tag "Find my course", name: "", class: "btn btn-primary" %>
+        <%= submit_tag "Find my course", name: "", class: "button-search" %>
       <% end %>
     </div>
   </div>

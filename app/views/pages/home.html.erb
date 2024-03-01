@@ -19,7 +19,7 @@
 <%= render "shared/search_bar" %>
 
 <div class="page-container pt-5">
-  <div class="row gap-5 align-center">
+  <div class="align-center cards-container">
     <% @courses.each do |course| %>
       <%= render "shared/card", course: course %>
     <% end %>
