@@ -13,6 +13,16 @@
   font-weight: 400;
   font-style: normal;
   color: grey;
+  line-height: 175%;
+}
+
+.text-editor {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: grey;
+  line-height: 185%;
 }
 
 .enroll-card {
@@ -58,5 +68,25 @@
 
 .location-text {
   font-size: 16px;
-  color: grey;
+  color: rgb(71, 71, 71);
+}
+
+.message {
+  border: 2px solid rgb(31, 123, 118);
+  background-color: rgb(237, 249, 248);
+  border-radius: 20px;
+  padding: 50px;
+}
+
+.data {
+  border: 2px solid rgb(255, 81, 0);
+  background-color: rgb(255, 232, 211);
+  border-radius: 20px;
+  padding: 50px;
+}
+
+.text-secondary-2 {
+  font-weight: 400;
+  color: rgb(58, 58, 58);
+  margin-bottom: 20px;
 }
