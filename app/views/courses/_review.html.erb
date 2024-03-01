@@ -6,8 +6,8 @@
       </p>
       <%= f.button :submit, 'Submit Review', class: 'btn btn-secondary' %>
       <div class="form-group">
-        <label class="control-label col-sm-2">Rating</label>
-        <div class="col-sm-10">
+        <label class="control-label col-sm-12">Rating</label>
+        <div class="col-sm-12">
           <div class="rating">
             <% (1..5).each do |star| %>
               <%= f.radio_button :rating, star, class: 'rating-input', id: "rating-#{star}" %>

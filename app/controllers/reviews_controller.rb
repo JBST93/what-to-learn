@@ -5,14 +5,12 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
-    # @review.user = current_user
   end
 
   def create
     @review = Review.new(review_params)
     @review.course_id = params[:course_id]
     # @review.user = current_user
-    # raise
     if @review.save
       redirect_to course_path(@review.course)
     else
