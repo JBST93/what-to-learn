@@ -4,7 +4,9 @@
 
     <div class="d-flex flex-row gap-3 align-items-center course-header">
 
-      <div class="course-tag m-0", style="background-color: <%= colors_array.sample %>; border: 0.5px solid lightgray"><%= course.tag %></div><%=  %>
+      <div class="course-tag m-0", style="background-color: <%= colors_array.sample %>; border: 0.5px solid lightgray">
+        <%= course.tag %>
+      </div>
         <div class="">
             <% if course.end_date < Date.today %>
               <div class="course-tag m-0" style="border: 1px solid lightgray;">Finished</div>
@@ -21,9 +23,9 @@
     <div class="d-flex flex-row justify-content-between align-items-center course-creator">
       <div class="d-flex flex-row justify-content-right align-items-center">
         <% if course.user.avatar.attached? %>
-          <%= cl_image_tag course.user.avatar.key, class: "img" %>
+          <%= cl_image_tag course.user.avatar.key, class: "avatar me-3" %>
         <% else %>
-          <div class="img"></div>
+          <div class="avatar me-3"></div>
         <% end %>
         <p class="creator-name m-0"><%= course.user.first_name %> <%= course.user.last_name %></p>
       </div>

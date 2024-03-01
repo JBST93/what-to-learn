@@ -1,21 +1,30 @@
 .show-title {
-  font-size: 52px;
+  font-size: 42px;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-style: normal;
+  line-height: 130%;
 }
 
 .show-description {
-  font-size: 20px;
+  font-size: 18px;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
+  color: grey;
 }
 
 .enroll-card {
   background-color: hsl(0, 0%, 92%);
   border: 1px solid rgb(206, 206, 206);
+  height: fit-content;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.enroll-card-2 {
+  border: 1px solid rgb(0, 10, 116);
   height: fit-content;
   border-radius: 8px;
   padding: 24px;
@@ -40,4 +49,14 @@
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+.fa-location-dot {
+  font-size: 20px;
+  color: grey;
+}
+
+.location-text {
+  font-size: 16px;
+  color: grey;
 }
