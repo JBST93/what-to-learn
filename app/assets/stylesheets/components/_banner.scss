@@ -33,3 +33,19 @@
   font-style: normal;
   color: black;
 }
+
+.feature-banner {
+  height: 400px;
+  background-image: url("gradient-1629715.jpg");
+  background-position-y: bottom;
+  background-size: cover;
+}
+
+.feature-banner .title {
+  font-size: 48px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-shadow: 0 0 1px #dcdcdc
+}

@@ -23,11 +23,11 @@
               <p class="profile-text">Role: <%= current_user.role %></p>
           </div>
           <div class="row">
-            <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-primary" %>
+            <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-primary inner-text" %>
           </div>
           <% if current_user.role == "Instructor" %>
             <div class="row">
-              <%= link_to "Create a new course", new_course_path, class: "btn btn-primary mt-3" %>
+              <%= link_to "Create a new course", new_course_path, class: "btn btn-primary inner-text mt-3" %>
             </div>
           <% end %>
         </div>
