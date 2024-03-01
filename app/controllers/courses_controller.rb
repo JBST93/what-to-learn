@@ -36,11 +36,16 @@ class CoursesController < ApplicationController
   end
 
   def edit
+    @course.user == current_user
   end
 
   def update
-    @course.update(course_params)
-    redirect_to course_path(@course)
+    if @course.user == current_user
+      @course.update(course_params)
+      redirect_to course_path(@course)
+    else
+      redirect_to courses_path
+    end
   end
 
   def destroy
