@@ -6,7 +6,7 @@
       </div>
       <% if @my_enrollments.empty? %>
         <h5 class="mt-4">You have not enrolled in any course, we suggest you enroll in one!</h5>
-        <%= link_to "Explore courses", courses_path, class: "btn btn-primary" %>
+        <%= link_to "Explore courses", courses_path, class: "button" %>
       <% else %>
         <h5 class="mt-4">Here are your enrollments: </h5>
         <div class="cards-container gap-3">
@@ -14,25 +14,27 @@
             <%= render partial: 'shared/card', locals: { course: my_enrollment.course } %>
           <% end %>
         </div>
+        <div class="calendar w-50" data-controller="calendar" class="enrollments-text">
+        </div>
       <% end %>
     <% else %>
       <div class="d-flex flex-row justify-content-between align-items-center">
         <h1 class="enrollments-title">Hi <%= current_user.first_name.capitalize%> 👋 </h1>
-        <%= link_to "Create a course", new_course_path, class: "btn btn-primary" %>
+        <%= link_to "Create a course", new_course_path, class: "button" %>
       </div>
       <% if @my_courses.empty? %>
         <h5 class="my-4">You have not created any course yet.</h5>
       <% else %>
-        <div class="gap-3">
+        <div class="cards-container gap-3">
           <% @my_courses.each do |my_course| %>
             <%= render partial: 'shared/card', locals: { course: my_course } %>
           <% end %>
         </div>
+        <div class="calendar w-50" data-controller="calendar" class="enrollments-text">
+        </div>
       <% end %>
     <% end %>
 
-  </div>
-  <div class="calendar w-50" data-controller="calendar" class="enrollments-text">
   </div>
 </div>
 
