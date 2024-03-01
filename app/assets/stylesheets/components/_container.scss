@@ -4,3 +4,9 @@
   width: 1256px;
   margin: 0 auto;
 }
+
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 32px;
+}

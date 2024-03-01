@@ -9,7 +9,7 @@
         <%= link_to "Explore courses", courses_path, class: "btn btn-primary" %>
       <% else %>
         <h5 class="mt-4">Here are your enrollments: </h5>
-        <div class="row gap-3">
+        <div class="cards-container gap-3">
           <% @my_enrollments.each do |my_enrollment| %>
             <%= render partial: 'shared/card', locals: { course: my_enrollment.course } %>
           <% end %>
@@ -23,7 +23,7 @@
       <% if @my_courses.empty? %>
         <h5 class="my-4">You have not created any course yet.</h5>
       <% else %>
-        <div class="row gap-3">
+        <div class="gap-3">
           <% @my_courses.each do |my_course| %>
             <%= render partial: 'shared/card', locals: { course: my_course } %>
           <% end %>
