@@ -21,7 +21,7 @@ class EnrollmentsController < ApplicationController
     @enrollment.paid = true
 
     if @enrollment.save
-      redirect_to course_path(@course)
+      redirect_to course_path(@course), notice: "Enrollment Successfull 🎉"
     else
       render :new, status: :unprocessable_entity
     end
