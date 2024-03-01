@@ -1,19 +1,16 @@
-<div class="page-container pb-0">
-
-<div class="row">
-  <div class="col-sm-3 align-right">
-    <h2 class="form-title">Find Your <strong>Dream Course</strong></h2>
-    <p>Search for your course now</p>
+<div class="page-container mt-4 pb-0">
+  <div class="row d-flex justify-content-between align-items-center">
+    <div class="col-sm-4">
+      <h2 class="form-title m-0">Find Your <strong>Dream Course</strong></h2>
+    </div>
+    <div class="col-sm-7">
+      <%= form_with url: courses_path, method: :get, class: "d-flex w-100" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control form-control-lg",
+              placeholder: "i.e Web Development Bootcamp"%>
+        <%= submit_tag "Find my course", name: "", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
-  <div class="col-sm-8 my-3">
-    <%= form_with url: courses_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Type a keyword"
-        %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
 </div>
