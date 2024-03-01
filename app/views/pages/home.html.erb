@@ -1,5 +1,27 @@
-<div class="page-container">
-  <div class="row d-flex justify-content-between">
-    <%= render "shared/card", course: @course %>
+<div class="banner d-flex justify-content-center align-items-center">
+  <div class="d-flex flex-column">
+    <h1 class="title mb-3">Unlock your career potential</h1>
+    <div class="d-flex flex-row mx-auto gap-3">
+      <% if user_signed_in? %>
+        <div class="d-flex flex-column justify-content-center align-items-center">
+          <p class="banner-text mt-2">Join world-class live courses anywhere in the world, to learn new skills and level up your career</p>
+        </div>
+      <% else %>
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <p class="banner-text mt-2">Join world-class live courses anywhere in the world, to learn new skills and level up your career</p>
+        <%= link_to "Start learning", new_user_registration_path, class: "btn btn-outline-light w-25 mt-3" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/search_bar" %>
+
+<div class="page-container pt-5">
+  <div class="align-center cards-container">
+    <% @courses.each do |course| %>
+      <%= render "shared/card", course: course %>
+    <% end %>
   </div>
 </div>

@@ -1,0 +1,39 @@
+<div class="container pt-5">
+  <div class="row pb-5">
+    <div class="col-md-12">
+      <div class="mb-5">
+          <h3>Tickets</h3>
+          <% if current_user.role == "student" %>
+            <%= link_to "New Message", new_user_message_path, class: "btn btn-primary float-right" %>
+          <% end %>
+        </div>
+        <div class="card-body">
+          <% @messages.each do |message| %>
+            <% if message.sender_id == current_user.id || message.recipient_id == current_user.id %>
+              <div class="message card mb-3">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <strong class="text-primary">Sender:</strong> <%= User.find(message.sender_id).first_name.capitalize %>
+                    </div>
+                    <div class="col-md-6 text-right">
+                      <strong class="text-primary">Recipient:</strong> <%= User.find(message.recipient_id).first_name.capitalize %>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <p class="card-text"><strong>Message:</strong> <%= message.content %></p>
+                  <% if current_user.role == "instructor" %>
+                    <%= link_to "Respond", new_user_message_path(sender_id: message.recipient_id, recipient_id: message.sender_id), class: "btn btn-primary" %>
+                  <% end %>
+                </div>
+                <div class="card-footer bg-light">
+                  <p><strong>Sent:</strong> <%= message.created_at.strftime("%B %d, %Y at %I:%M %p") %> (<%= time_ago_in_words(message.created_at) %> ago)</p>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>

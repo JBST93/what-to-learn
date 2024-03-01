@@ -13,9 +13,6 @@
             <%= f.input :description, required: true, class: "form-control", label: "Describe your course" %>
           </div>
           <div class="row">
-            <%= f.input :bio, required: true, class: "form-control", label: "Describe yourself as an instructor" %>
-          </div>
-          <div class="row">
             <%= f.input :start_date, as: :date %>
           </div>
           <div class="row">
@@ -33,7 +30,13 @@
             <%= f.input :address %>
           </div>
           <div class="row">
-            <%= f.input :text_editor, required: true, class: "form-control", label: "Add a welcome message for students" %>
+            <%= f.input :text_editor, required: true, class: "form-control", label: "Add details about your course" %>
+          </div>
+          <div class="row">
+            <%= f.input :prep, required: true, class: "form-control", label: "Outline steps students can take to prepare for this course" %>
+          </div>
+          <div class="row">
+            <%= f.input :welcome_message, required: true, class: "form-control", label: "Write a welcome message for students" %>
           </div>
         </div>
         <div class="form-actions">

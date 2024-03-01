@@ -1,6 +1,34 @@
+$small-screen: 576px;
+$middle-screen: 768px;
+
 .page-container {
   padding-top: 64px;
   padding-bottom: 64px;
   width: 1256px;
   margin: 0 auto;
+
+  @media (max-width: $middle-screen) {
+    margin: 0 auto;
+  }
+
+  @media (max-width: $small-screen) {
+    margin: 0 auto;
+  }
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 32px;
+
+  @media (max-width: $middle-screen) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 32px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: $small-screen) {
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+  }
 }

@@ -1,14 +1,10 @@
-<h3>Your Instructor!</h3>
-
-<h5><p><%= @course.user.first_name.capitalize %> <%= @course.user.last_name.capitalize %></p></h5>
-
-<% if @course.user.avatar.key %>
-  <%= cl_image_tag @course.user.avatar.key, :transformation=>[
-  {:gravity=>"face", :height=>200, :width=>200, :crop=>"thumb"},
-  {:radius=>"max"},
-  {:fetch_format=>:auto}
-  ]%>
-<% end %>
-
-
-<%= @course.user.bio%>
+<h5 class="mb-3">Meet your Instructor</h5>
+<div class="d-flex flex-row justify-content-left align-items-center course-creator">
+  <% if @course.user.avatar.attached? %>
+    <%= cl_image_tag @course.user.avatar.key, class: "avatar" %>
+  <% else %>
+    <div class="avatar me-3"></div>
+  <% end %>
+  <h6 class="creator-name m-0"><%= @course.user.first_name %> <%= @course.user.last_name %></h6>
+</div>
+<p class="m-0 p-0 mt-3 bio-text"><%= @course.user.bio %></p>

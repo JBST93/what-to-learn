@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2024_03_01_151418) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,7 +58,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_01_151418) do
     t.float "latitude"
     t.float "longitude"
     t.string "address"
-    t.text "bio"
+    t.text "prep"
+    t.text "welcome_message"
     t.index ["course_creator_id"], name: "index_courses_on_course_creator_id"
   end
 
@@ -80,6 +82,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_01_151418) do
     t.boolean "paid"
     t.index ["course_id"], name: "index_enrollments_on_course_id"
     t.index ["user_id"], name: "index_enrollments_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.bigint "sender_id"
+    t.bigint "recipient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipient_id"], name: "index_messages_on_recipient_id"
+    t.index ["sender_id"], name: "index_messages_on_sender_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -115,6 +129,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_01_151418) do
   add_foreign_key "creditcards", "users"
   add_foreign_key "enrollments", "courses"
   add_foreign_key "enrollments", "users"
+  add_foreign_key "messages", "users", column: "recipient_id"
+  add_foreign_key "messages", "users", column: "sender_id"
   add_foreign_key "reviews", "courses"
   add_foreign_key "reviews", "users"
 end
