@@ -90,19 +90,19 @@ courses = Course.create!([
 
   puts "descriptions created"
 
-  reviews = Review.create!([
-  { rating: "4", comment: "The course was an enlightening journey into programming logic and clear syntax. Highly recommend for everyone.", course_id: courses.sample.id },
-  { rating: "5", comment: "The depth of content and practical projects in the Rails course is unmatched. Great for aspiring developers", course_id: courses.sample.id },
-  { rating: "3", comment: "Engaging and thorough, the course equipped me with the skills needed to excel in my tech career", course_id: courses.sample.id },
-  { rating: "4", comment: "Learning everything through this course was pivotal; it's clear, concise, and incredibly practical", course_id: courses.sample.id },
-  { rating: "4", comment: "The depth of content and practical projects in the Rails course is unmatched. Great for aspiring developers", course_id: courses.sample.id },
-  { rating: "3", comment: "Best career decision I've made in a long time", course_id: courses.sample.id },
-  { rating: "5", comment: "Best career move I've made", course_id: courses.sample.id },
-  { rating: "4", comment: "Totally happy I made this career change", course_id: courses.sample.id },
-  { rating: "5", comment: "Best career decision I've made", course_id: courses.sample.id },
-  { rating: "3", comment: "It was very intense but now I'm on twice the salary I was before", course_id: courses.sample.id },
-  { rating: "5", comment: "It was very intense but I now feel able to apply for tech jobs", course_id: courses.sample.id }
-])
+#   reviews = Review.create!([
+#   { rating: "4", comment: "The course was an enlightening journey into programming logic and clear syntax. Highly recommend for everyone.", course: Course.all.sample, user: User.all.sample },
+#   { rating: "5", comment: "The depth of content and practical projects in the Rails course is unmatched. Great for aspiring developers", course_id: courses.sample.id, user: User.all.sample },
+#   { rating: "3", comment: "Engaging and thorough, the course equipped me with the skills needed to excel in my tech career", course_id: courses.sample.id, user: User.all.sample },
+#   { rating: "4", comment: "Learning everything through this course was pivotal; it's clear, concise, and incredibly practical", course_id: courses.sample.id, user: User.all.sample },
+#   { rating: "4", comment: "The depth of content and practical projects in the Rails course is unmatched. Great for aspiring developers", course_id: courses.sample.id, user: User.all.sample },
+#   { rating: "3", comment: "Best career decision I've made in a long time", course_id: courses.sample.id, user: User.all.sample },
+#   { rating: "5", comment: "Best career move I've made", course_id: courses.sample.id, user: User.all.sample },
+#   { rating: "4", comment: "Totally happy I made this career change", course_id: courses.sample.id, user: User.all.sample },
+#   { rating: "5", comment: "Best career decision I've made", course_id: courses.sample.id, user: User.all.sample },
+#   { rating: "3", comment: "It was very intense but now I'm on twice the salary I was before", course_id: courses.sample.id, user: User.all.sample },
+#   { rating: "5", comment: "It was very intense but I now feel able to apply for tech jobs", course_id: courses.sample.id, user: User.all.sample }
+# ])
 
 
 puts "Created 20 fake reviews."

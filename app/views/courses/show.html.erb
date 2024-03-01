@@ -1,7 +1,7 @@
 <% if @course.user == current_user %>
-  <%= render 'teacher' %>
+  <%= render 'courses/teacher' %>
 <% else %>
-  <%= render 'student' %>
+  <%= render 'courses/student' %>
 <% end %>
 <div class="container mt-5">
   <div class="justify-content flex-start">
@@ -13,11 +13,11 @@
         <% end %>
         <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
         <p class="mb-0"><%= review.comment %></p>
-        <p class="mb-0"><%= review.course.user.first_name %></p>
+        <p class="mb-0"><%= review.user.first_name %></p>
     <% end %>
 
     <% if user_signed_in? %>
-      <%= render 'review' %>
+      <%= render 'courses/review' %>
     <% end %>
   </div>
 </div>
