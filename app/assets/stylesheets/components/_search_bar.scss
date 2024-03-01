@@ -38,12 +38,16 @@
   vertical-align: middle;
   white-space: nowrap;
   word-wrap: break-word;
+  color: white;
+  background-color: rgb(255, 0, 170);
 }
 
 .button-search:hover {
   background-color: #F3F4F6;
   text-decoration: none;
   transition-duration: 0.1s;
+  color: rgb(255, 0, 170);
+  outline: 1px solid rgb(255, 0, 170);
 }
 
 .button-search:focus {

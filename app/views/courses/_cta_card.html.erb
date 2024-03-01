@@ -17,5 +17,5 @@
         <p class="mb-2"><span></span><%= @course.start_date.strftime('%d %b') %> - <%= @course.end_date.strftime("%d %b '%y") %></p>
         <p>Last Updated: <%= @course.updated_at.strftime("%d %b '%y")%>
         <p class="mb-4"><%= number_to_currency(@course.price, :unit => "£") %></p>
-        <%= link_to "Secure my spot!", new_course_enrollment_path(@course), class: "btn btn-primary w-100" %>
+        <%= link_to "Secure my spot!", new_course_enrollment_path(@course), class: "btn btn-primary inner-text w-100" %>
       <% end %>

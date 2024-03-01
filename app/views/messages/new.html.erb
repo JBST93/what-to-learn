@@ -1,15 +1,17 @@
-<div class="container">
+<div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-6">
+      <h3 class="mb-4">Write a new message</h3>
       <%= simple_form_for [@user, @message], html: { class: 'form-horizontal' } do |f| %>
         <%= f.input :content, as: :text, label: "Content" %>
         <%= f.input :sender_id, as: :hidden, input_html: { value: current_user.id } %>
+      
         <% if current_user.role=="student" %>
           <%= f.input :recipient_id, collection: @teachers.pluck(:first_name, :id), prompt: 'Select Teacher', label: "Recipient" %>
         <%else %>
         <%= f.input :recipient_id, as: :hidden, input_html: { value: params[:recipient_id]  } %>
         <% end %>
-        <%= f.button :submit, "Send Reply", class: 'btn btn-primary' %>
+        <%= f.button :submit, "Send Reply", class: 'btn btn-primary inner-text' %>
       <% end %>
     </div>
   </div>
