@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_29_155544) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_01_125708) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,7 +57,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_29_155544) do
     t.float "latitude"
     t.float "longitude"
     t.string "address"
-    t.text "bio"
+    t.text "prep"
+    t.text "welcome_message"
     t.index ["course_creator_id"], name: "index_courses_on_course_creator_id"
   end
 
